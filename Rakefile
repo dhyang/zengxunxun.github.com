@@ -262,7 +262,7 @@ multitask :push do
     puts "\n## Github Pages deploy complete"
   end
   puts "## Push octopress to gitcafe"
-  cd "." do
+  cd "#{ENV['PWD']}" do
       system "pwd"
       system "git add ."
       system "git add -u"

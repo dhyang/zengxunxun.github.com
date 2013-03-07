@@ -1,0 +1,28 @@
+---
+layout: post
+title: "sdfsfa"
+subtitle: "hello owrld"
+date: 2013-03-06 18:23
+comments: true
+categories: ["C++", "Java", "HTML"]
+---
+
+Reminders automatically email you when preventative maintenance
+tasks or inspections are coming due or overdue.
+The next due date or meter value (in miles, kilometers, or hours) automatically recalculates when you log
+maintenance based on the PM schedule you setup.
+<pre class="prettyprint linenums">
+#include &ltstdio.h&gt
+int main()
+{
+    int i;
+    for(i = 0 ; i < 10; i++)
+    {
+        printf("hello world\n");
+    }
+}
+</pre>
+Reminders automatically email you when preventative maintenance
+tasks or inspections are coming due or overdue.
+The next due date or meter value (in miles, kilometers, or hours) automatically recalculates when you log
+maintenance based on the PM schedule you setup.

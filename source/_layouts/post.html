@@ -1,0 +1,37 @@
+---
+layout: default
+single: true
+---
+<div class="span7" id="main">
+    <span class="pull-right">
+        {% if page.previous.url %}
+        <span class="btn btn-link"><a href="{{page.previous.url}}">&laquo;Prev</a></span>
+        {% endif %}
+        {% if page.next.url %}
+        <span class="btn btn-link"><a href="{{page.next.url}}">Next&raquo;</a></span>
+        {% endif %}
+    </span>
+    <div>
+        <div class="page-header">
+            <h2>
+                {% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}
+                <small>{% if page.subtitle %}{{ page.subtitle }}{% endif %}</small> 
+            </h2>
+        </div>
+        <div> {{ content }} </div>
+        <span class="badge badge-info">全文完 </span>
+        <span class="pull-right">
+            <i class="icon-calendar"></i><small>{% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}</small>
+            {% comment %}
+            {% if post.categories %}<i class="icon-tags"></i><small>{% include post/categories.html %}</small>{% endif %}
+            {% endcomment %}
+        </span>
+        <hr />
+        {% if page.comments %}        
+        {% include comment.html %}
+        {% endif %}
+    </div>
+</div>
+    
+
+

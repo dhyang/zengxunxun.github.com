@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://yoursite.com/blog/2013/02/28/hello/</loc>
+        <lastmod>2013-03-07T11:05:05+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yoursite.com/blog/2013/03/06/sdfsfa/</loc>
+        <lastmod>2013-03-07T10:45:27+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yoursite.com/blog/2013/03/06/dbus/</loc>
+        <lastmod>2013-03-07T11:05:53+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yoursite.com/</loc>
+        <lastmod>2013-03-07T11:05:53+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yoursite.com/blog/archives/</loc>
+        <lastmod>2013-03-07T12:08:44+08:00</lastmod>
+    </url>
+</urlset>

@@ -1,0 +1,11 @@
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head.html %}
+<body onload="prettyPrint()">
+    <div class="container">
+        <div>{% include navigator.html %}</div>
+        <div>{{ content | expand_urls: root_url }}</div>
+        <div>{% include footer.html %}</div>
+        <div>{% include javascript.html %}</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+---
+layout: default
+title: Blog Archives
+---
+<div class="span8" id="main">
+    <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+            {% category_list [counter:true] %} 
+        </ul>
+        <div class="tab-content">
+            {% for post in site.posts reverse %}
+            {% include archive_post.html %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

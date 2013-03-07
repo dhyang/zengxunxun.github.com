@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<div class="span8" id="main">
+    <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+            {% category_list [counter:true] %} 
+        </ul>
+        <div class="tab-content">
+            {% for post in site.categories[page.category] %}
+            {% include archive_post.html %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -261,6 +261,18 @@ multitask :push do
     system "git push origin #{deploy_branch} --force"
     puts "\n## Github Pages deploy complete"
   end
+  puts "## Push octopress to gitcafe"
+  cd "." do
+      system "pwd"
+      system "git add ."
+      system "git add -u"
+      puts "\n## Commiting: Site updated at #{Time.now.utc}"
+      message = "Site updated at #{Time.now.utc}"
+      system "git commit -m \"#{message}\""
+      puts "\n## Pushing generated #{deploy_dir} website"
+      system "git push origin #{deploy_branch} --force"
+      puts "\n## Push complete"
+  end
 end
 
 desc "Update configurations to support publishing to root or sub directory"

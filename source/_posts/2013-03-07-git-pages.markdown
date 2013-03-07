@@ -1,0 +1,34 @@
+---
+layout: post
+title: "git pages"
+date: 2013-03-07 14:25
+comments: true
+categories: ["git"]
+---
+
+> 创建 [github pages](https://github.com/)
+{% highlight %}
+mkdir demo.github.com
+cd demo.github.com
+touch README.md
+echo "hello world" > index.html
+git init
+git add .
+git commit -a -m "first commit"
+git remote add origin git@github.com:demo/demo.github.com.git
+git push origin master
+{% endhighlight %}
+
+> 创建 [gitcafe pages](https://gitcafe.com/)
+{% highlight %}
+mkdir demo
+cd demo
+touch README.md
+echo "hello world" > index.html
+git init
+git add .
+git commit -a -m "first commit"
+git remote add origin git@gitcafe.com:demo/demo.git
+git checkout -b gitcafe-pages
+git push origin gitcafe-pages 
+{% endhighlight %}

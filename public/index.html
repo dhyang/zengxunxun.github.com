@@ -46,9 +46,9 @@
     <div class="page-header" style="padding: 20px;">
         <h2>
             
-             <a href="/blog/2013/03/07/hello-world/">
+             <a href="/blog/2013/03/07/git-pages/">
                 
-                Hello World
+                Git Pages
             </a>
             <span class="pull-right" style="font-size: 12px;"><i class="icon-calendar"></i>&nbsp;
 
@@ -62,10 +62,39 @@
   
 
 
-<time datetime="2013-03-07T12:24:00+08:00" pubdate data-updated="true">Mar 7<span>th</span>, 2013</time></span>
+<time datetime="2013-03-07T14:25:00+08:00" pubdate data-updated="true">Mar 7<span>th</span>, 2013</time></span>
          </h2>
         <div>
-            <h3>First test</h3>
+            <blockquote><p>创建 <a href="https://github.com/">github pages</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+mkdir demo.github.com
+cd demo.github.com
+touch README.md
+echo "hello world" > index.html
+git init
+git add .
+git commit -a -m "first commit"
+git remote add origin git@github.com:demo/demo.github.com.git
+git push origin master
+</pre>
+
+
+<blockquote><p>创建 <a href="https://gitcafe.com/">gitcafe pages</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+mkdir demo
+cd demo
+touch README.md
+echo "hello world" > index.html
+git init
+git add .
+git commit -a -m "first commit"
+git remote add origin git@gitcafe.com:demo/demo.git
+git checkout -b gitcafe-pages
+git push origin gitcafe-pages 
+</pre>
+
 
             
             
@@ -81,7 +110,7 @@
 </div>
         <div><div class="span8" id="footer">
     <p>
-    Powered by <a href="#">Octopress</a>&nbsp&&nbsp <a href="#">Bootstrap</a>, All Rights Shared
+    Powered by <a href="http://octopress.org/">Octopress</a>&nbsp&&nbsp <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>, All Rights Shared
     </p>
 </div>
 

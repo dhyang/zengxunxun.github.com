@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[zengxunxun]]></title>
-  <link href="http://zengxunxun.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: git | zengxunxun]]></title>
+  <link href="http://zengxunxun.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://zengxunxun.github.com/"/>
   <updated>2013-03-07T14:38:15+08:00</updated>
   <id>http://zengxunxun.github.com/</id>
@@ -18,8 +18,7 @@
     <link href="http://zengxunxun.github.com/blog/2013/03/07/git-pages/"/>
     <updated>2013-03-07T14:25:00+08:00</updated>
     <id>http://zengxunxun.github.com/blog/2013/03/07/git-pages</id>
-    <content type="html"><![CDATA[<blockquote><p>创建 <a href="https://github.com/">github pages</a></p></blockquote>
-
+    <content type="html"><![CDATA[<blockquote><p>创建 <a href="https://github.com/">github pages</a>
 <pre class="prettyprint linenums">
 mkdir demo.github.com
 cd demo.github.com
@@ -30,11 +29,9 @@ git add .
 git commit -a -m "first commit"
 git remote add origin git@github.com:demo/demo.github.com.git
 git push origin master
-</pre>
+</pre></p>
 
-
-<blockquote><p>创建 <a href="https://gitcafe.com/">gitcafe pages</a></p></blockquote>
-
+<p>创建 <a href="https://gitcafe.com/">gitcafe pages</a>
 <pre class="prettyprint linenums">
 mkdir demo
 cd demo
@@ -45,9 +42,8 @@ git add .
 git commit -a -m "first commit"
 git remote add origin git@gitcafe.com:demo/demo.git
 git checkout -b gitcafe-pages
-git push origin gitcafe-pages 
-</pre>
-
+git push origin gitcafe-pages
+</pre></p></blockquote>
 ]]></content>
   </entry>
   

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: openbox | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/openbox/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Openbox Keybind]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/20/openbox/"/>
+    <updated>2013-03-20T09:32:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/20/openbox</id>
+    <content type="html"><![CDATA[<h5>openbox keybind for volume&amp;light control</h5>
+
+<p><pre class="prettyprint linenums">
+&lt;keybind key="XF86AudioRaiseVolume"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;amixer set Master 5%+ unmute&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86AudioLowerVolume"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;amixer set Master 5%- unmute&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86AudioMute"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;amixer set Master toggle&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86MonBrightnessUp"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;xbacklight -inc 10%&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86MonBrightnessDown"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;xbacklight -dec 10%&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+</pre></p>
+]]></content>
+  </entry>
+  
+</feed>

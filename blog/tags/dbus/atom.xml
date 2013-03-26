@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: dbus | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/dbus/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[dbus]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/15/dbus/"/>
+    <updated>2013-03-15T14:58:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/15/dbus</id>
+    <content type="html"><![CDATA[<p><a href="http://www.freedesktop.org/wiki/Software/dbus">dbus 官网</a></p>
+
+<p><pre class="prettyprint linenums">
+&lt;policy context="default"&gt;
+  &lt;!-- Deny everything then punch holes --&gt;
+  &lt;allow send_interface="*"/&gt;
+  &lt;allow receive_interface="*"/&gt;
+  &lt;allow own="*"/&gt;
+  &lt;!-- But allow all users to connect --&gt;
+  &lt;allow user="*"/&gt;
+  &lt;!-- Allow anyone to talk to the message bus --&gt;
+  &lt;allow send_destination="org.freedesktop.DBus"/&gt;
+  &lt;allow receive_sender="org.freedesktop.DBus"/&gt;
+  &lt;!-- valid replies are always allowed --&gt;
+  &lt;allow send_requested_reply="true"/&gt;
+  &lt;allow receive_requested_reply="true"/&gt;
+&lt;/policy&gt;
+</pre></p>
+
+<p><pre class="prettyprint linenums">
+typedef struct DBusObjectPathVTable DBusObjectPathVTable;
+struct DBusObjectPathVTable
+{&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DBusObjectPathUnregisterFunction unregister_function; 
+DBusObjectPathMessageFunction message_function; 
+void (* dbus_internal_pad1) (void *); 
+void (* dbus_internal_pad2) (void *); 
+void (* dbus_internal_pad3) (void *); 
+void (* dbus_internal_pad4) (void *); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;};
+</pre></p>
+]]></content>
+  </entry>
+  
+</feed>

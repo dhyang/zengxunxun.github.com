@@ -1,0 +1,285 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Beginning JavaScript(四) - zengxx'notes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="zengxunxun" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+        if(navigator.userAgent.indexOf("MSIE") != -1) {
+            var version = navigator.userAgent.match(/MSIE ([\d.]+)/)[1];
+            if(Math.round(version) < 9) {
+                document.write("Not support IE " + Math.round(version) + ", Please change your browser.<br/><br/>");
+                document.write("不支持 IE" + Math.round(version) + ", 请更换浏览器.");
+                window.stop ? window.stop() : document.execCommand("Stop");
+            }
+        }
+    </script>
+    <link rel="shortcut icon" href="/atom.xml" />
+	<link rel="alternate" href="/atom.xml" title="zengxx'notes" type="application/atom+xml">
+    <link rel="stylesheet" href="//www.bootcss.com/assets/css/bootstrap.min.css?v2.3.1" type="text/css"/>
+    <link rel="stylesheet" href="//www.bootcss.com/assets/css/bootstrap-responsive.min.css?v2.3.1" type="text/css"/>
+    <link rel="stylesheet" href="//www.bootcss.com/assets/js/google-code-prettify/prettify.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/ui.totop.css" type="text/css" />
+    <link rel="stylesheet" href="/css/docs.css" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header"><div class="row">
+    <div class="offset2 span8">
+        <p class="opensans huge fit-height">zengxx's notes</p>
+        <blockquote>
+            <p class="opensans large muted">Sweet mother of monkey milk, a gold coin!</p>
+        </blockquote>
+    </div>
+</div>
+</div>
+        <div id="navigator"><div class="row">
+    <div class="offset2 span8">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <!--
+                    <li><a href="/blog/archives">Archives</a></li>
+                    -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret">&nbsp;</b></a> 
+                        <ul class="dropdown-menu">
+                            <li><a href='/blog/categories/c'>C</a></li>
+<li><a href='/blog/categories/javascript'>JavaScript</a></li>
+<li><a href='/blog/categories/linux'>Linux</a></li>
+<li><a href='/blog/categories/note'>note</a></li>
+<li><a href='/blog/categories/octopress'>Octopress</a></li>
+<li><a href='/blog/categories/other'>other</a></li>
+<li><a href='/blog/categories/ruby'>Ruby</a></li>
+<li><a href='/blog/categories/shell'>Shell</a></li>
+ 
+                            <li class="divider"></li>
+                            <li class="nav-header">All(20)</li>
+                        </ul>
+                    </li>
+                    <li><a href="/blog/tags" id="tags">Tags</a></li>
+                    <!--
+                    <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+                    -->
+                    <li><a href="/blog/bookmarks">BookMarks</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li><a href="/blog/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <div id="content"><div class="row">
+    <div class="offset3 span6">
+        <div class="article">
+            <div class="fit-height">
+                <div>
+                    <h3>
+                        <span class="color1">
+                            Beginning JavaScript(四)
+                        </span>
+                        
+                        <small>Regular Express</small>
+                        
+                    </h3>
+                    <div>
+                    <span class="badge">2013-03-19</span>
+                    <span class="pull-right">
+
+
+    <span class="label label-info"><a href='/blog/tags/javascript/'>JavaScript</a></span>&nbsp;<span class="label label-info"><a href='/blog/tags/regular/'>Regular</a></span>&nbsp;<span class="label label-info"><a href='/blog/tags/string/'>String</a></span>
+
+
+</span>
+                    </div>
+                </div>
+            </div>
+            <div> <ul>
+<li><h5>RegExp attributes</h5>
+
+<blockquote><p>By default, the RegExp object looks only for the first matching pattern.</p></blockquote></li>
+</ul>
+
+
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Attribute Character</th>
+<th>Description</th>
+<th></th>
+</tr>
+<tr>
+<td>G</td>
+<td>Global match</td>
+<td></td>
+</tr>
+<tr>
+<td>I</td>
+<td>Pattern is case-insensitive</td>
+<td></td>
+</tr>
+<tr>
+<td>M</td>
+<td>Multi-line flag</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<!-- more -->
+
+
+<ul>
+<li><h5>Text, Numbers, and Punctuation</h5></li>
+</ul>
+
+
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Matches</th>
+<th></th>
+</tr>
+<tr>
+<td>\d</td>
+<td>digit from 0 to 9</td>
+<td></td>
+</tr>
+<tr>
+<td>\D</td>
+<td>not a digit</td>
+<td></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>A–Z, a–z, 0–9, _</td>
+<td></td>
+</tr>
+<tr>
+<td>\W</td>
+<td>non-word character</td>
+<td></td>
+</tr>
+<tr>
+<td>\s</td>
+<td>whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>\S</td>
+<td>non-whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>.</td>
+<td>single character ther than \n</td>
+<td></td>
+</tr>
+<tr>
+<td>[&#8230;]</td>
+<td>characters inside brackets</td>
+<td></td>
+</tr>
+<tr>
+<td>[^&#8230;]</td>
+<td>not one of the brackets</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><h5>Repetition Characters</h5></li>
+</ul>
+
+
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n or more of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>at least n and at most m of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>previous item zero or one time</td>
+</tr>
+<tr>
+<td>+</td>
+<td>previous item one or more times</td>
+</tr>
+<tr>
+<td>*</td>
+<td>previous item zero or more times</td>
+</tr>
+</tbody>
+</table>
+
+
+
+ </div>
+            
+            <div class="row">
+                <div class="pull-right">
+                    <ul class="nav nav-pills">
+                        
+                        <li><a href="/blog/2013/03/19/tmux-startup-script/">&laquo;</a></li>
+                        
+                        
+                        <li><a href="/blog/2013/03/19/ruby/">&raquo;</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <div id="footer"><div class="row">
+    <p> Powered by <a href="http://octopress.org/" target="_blank">Octopress</a>&nbsp;&amp;&nbsp;<a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>, All Rights Shared </p>
+</div>
+<!--
+<a href="https://github.com/zengxunxun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+-->
+
+</div>
+    </div>
+    <script type="text/javascript" src="http://www.bootcss.com/assets/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="http://www.bootcss.com/assets/js/bootstrap.min.js?v2.3.1"></script>
+<script type="text/javascript" src="/js/jquery.animate-shadow-min.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
+<script type="text/javascript" src="/js/jquery.ui.totop.js"></script>
+<script type="text/javascript" src="/js/jquery.tagcanvas.min.js"></script>
+<script type="text/javascript" src="/js/jquery.hoveraccordion.min.js"></script>
+<script type="text/javascript" src="/js/docs.js"></script>
+
+</body>
+</html>

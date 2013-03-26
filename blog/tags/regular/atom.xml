@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: Regular | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/regular/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(四)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/19/javascript3/"/>
+    <updated>2013-03-19T21:00:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/19/javascript3</id>
+    <content type="html"><![CDATA[<ul>
+<li><h5>RegExp attributes</h5>
+
+<blockquote><p>By default, the RegExp object looks only for the first matching pattern.
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Attribute Character</th>
+<th>Description</th>
+<th></th>
+</tr>
+<tr>
+<td>G</td>
+<td>Global match</td>
+<td></td>
+</tr>
+<tr>
+<td>I</td>
+<td>Pattern is case-insensitive</td>
+<td></td>
+</tr>
+<tr>
+<td>M</td>
+<td>Multi-line flag</td>
+</tr>
+</tbody>
+</table>
+</p></blockquote></li>
+</ul>
+
+
+<!-- more -->
+
+
+<ul>
+<li><h5>Text, Numbers, and Punctuation</h5>
+
+<p><table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Matches</th>
+<th></th>
+</tr>
+<tr>
+<td>\d</td>
+<td>digit from 0 to 9</td>
+<td></td>
+</tr>
+<tr>
+<td>\D</td>
+<td>not a digit</td>
+<td></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>A–Z, a–z, 0–9, _</td>
+<td></td>
+</tr>
+<tr>
+<td>\W</td>
+<td>non-word character</td>
+<td></td>
+</tr>
+<tr>
+<td>\s</td>
+<td>whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>\S</td>
+<td>non-whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>.</td>
+<td>single character ther than \n</td>
+<td></td>
+</tr>
+<tr>
+<td>[...]</td>
+<td>characters inside brackets</td>
+<td></td>
+</tr>
+<tr>
+<td>[<sup>...]</sup></td>
+<td>not one of the brackets</td>
+</tr>
+</tbody>
+</table>
+</p></li>
+<li><h5>Repetition Characters</h5>
+
+<p><table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n or more of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>at least n and at most m of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>previous item zero or one time</p></li></td>
+</tr>
+<tr>
+<td><li></td>
+<td>previous item one or more times</li></td>
+</tr>
+<tr>
+<td><li></td>
+<td>previous item zero or more times</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

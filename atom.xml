@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/25/ruby/"/>
+    <updated>2013-03-25T22:05:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/25/ruby</id>
+    <content type="html"><![CDATA[<h5>Attribute accessors</h5>
+
+<blockquote><p>The attr_reader creates getter methods. The attr_writer method creates setter methods and instance variables for this setters. The attr_accessor method creates both getter, setter methods and their instance variables.</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Car
+    attr_reader :name, :price
+    attr_writer :name, :price  
+    def to_s
+        "#{@name}: #{@price}"
+    end
+end
+</pre>
+
+
+<pre class="prettyprint linenums">
+class Book
+   attr_accessor :title, :pages    
+end
+b1 = Book.new
+b1.title = "Hidden motives"
+b1.pages = 255
+p "The book #{b1.title} has #{b1.pages} pages"
+</pre>
+
+
+<h5>Class constants</h5>
+
+<pre class="prettyprint linenums">
+class MMath
+    PI = 3.1415
+end
+puts MMath::PI
+</pre>
+
+
+<!-- more -->
+
+
+<h5>The to_s method</h5>
+
+<blockquote><p>The to_s method belongs to this class.</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Being
+    def to_s
+        "hello world"
+    end
+end
+
+b = Being.new
+puts b
+</pre>
+
+
+<h5>Operator overloading</h5>
+
+<pre class="prettyprint linenums">
+class Being
+    attr_accessor :radius
+
+    def initialize r
+        @radius = r
+    end
+
+    def +(other)
+        Being.new (@radius + other.radius)
+    end
+
+    def to_s
+        "output #{@radius}"
+    end
+end
+
+a1 = Being.new 1
+a2 = Being.new 2
+puts a1+a2
+</pre>
+
+
+<h5>Class methods</h5>
+
+<blockquote><p>Class methods are called on a class. They cannot be called on an instance of a class.</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Being 
+    def self.info1
+       "This is a Wood class info1" 
+    end
+
+    class &lt;&lt; Being 
+        def info2
+           "This is a Brick class info2" 
+        end
+    end
+end
+
+def Being.info3
+   "This is a Rock class info3" 
+end
+
+puts Being.info1
+puts Being.info2
+puts Being.info3
+</pre>
+
+
+<h5>instance method</h5>
+
+<blockquote><p> Instance methods belong to an instance of an object</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Being 
+    attr_accessor :info2
+    def info1
+        "This is info1 object"
+    end
+end
+
+a = Being.new
+puts a.info1
+
+b = Being.new
+b.info2 = "This is info2 object"
+puts b.info2
+
+c = Being.new
+def c.info3
+    "This is info3 object" 
+end
+puts c.info3
+</pre>
+
+
+<h5>Polymorphism</h5>
+
+<pre class="prettyprint linenums">
+class Animal
+    def make_noise 
+        "Some noise"
+    end
+    def sleep 
+        puts "#{self.class.name} is sleeping." 
+    end
+end
+class Dog &lt; Animal
+    def make_noise 
+        'Woof!'         
+    end 
+end
+class Cat &lt; Animal 
+
+    def make_noise 
+        'Meow!' 
+    end 
+end
+a = Animal.new 
+d = Dog.new
+c = Cat.new
+puts a.make_noise
+puts d.make_noise
+puts c.make_noise
+a.sleep
+d.sleep
+c.sleep
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[computer_system]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/24/computer-system/"/>
+    <updated>2013-03-24T18:36:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/24/computer-system</id>
+    <content type="html"><![CDATA[<ol>
+<li>上下文 位、字符、ASCII标准、文本文件、二进制文件
+在不同的上下中同样的字节序列可能表示一个整数、浮点、字符串、机器指令
+数字的机器表示方法</li>
+<li>编译系统 预处理器-编译器-汇编器-链接器 (Relocatable Object Program)</li>
+<li>优化程序性能、理解链接时错误、避免安全漏洞</li>
+<li>硬件组成：总线、I/O设备、主存、处理器</li>
+<li>开销、机械原理</li>
+<li>存储设备形成的层次结构：寄存器、高速缓存、主存、本地磁盘、远程存储</li>
+<li>操作系统管理硬件：硬件被失控的应用程序滥用、向应用程序提供简单一致的机制来控制复杂而又不同的低级硬件设备</li>
+<li>操作系统对一个正在运行的程序的抽象，上下文：跟踪所需的状态信息，多进程：上下文切换进程交错执行</li>
+<li>线程运行在进程的上下文中，共享代码的全局数据</li>
+<li>虚拟存储器，虚拟地址空间</li>
+<li>全局变量、代码数据区、堆、共享库、栈、内核虚拟存储器</li>
+<li>文件： 文件字节序列</li>
+<li>并行： 并发使一个系统运行更快；并发：同时具有多个活动的系统、线程级并发、指令级并行、单指令、多数据并行</li>
+<li>主内存 大的字节数组(虚拟存储器)</li>
+<li>程序数据、指令和控制信息</li>
+<li>字长</li>
+<li>可移植的掩码 ~0</li>
+<li>逻辑运算，对第一个表达式能确定表达式的结果,那么逻辑运算就不会对第二个参数求值</li>
+<li>stdint.h</li>
+<li>强制类型转换与模计算</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/23/ruby/"/>
+    <updated>2013-03-23T22:05:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/23/ruby</id>
+    <content type="html"><![CDATA[<ul>
+<li>Abstraction 抽象
+
+<blockquote><p>simplifying complex reality by modeling classes appropriate to the problem</p></blockquote></li>
+<li>Polymorphism 多态
+
+<blockquote><p>process of using an operator or function in different ways for different data input</p></blockquote></li>
+<li>Encapsulation 封装
+
+<blockquote><p>implementation details of a class from other objects</p></blockquote></li>
+<li>Inheritance 继承
+
+<blockquote><p>a way to form new classes using classes that have already been defined</p></blockquote></li>
+</ul>
+
+
+<h5>Objects</h5>
+
+<pre class="prettyprint linenums">
+class Being
+end
+b = Being.new
+</pre>
+
+
+<h5>Constructor</h5>
+
+<pre class="prettyprint linenums">
+class Being
+    def initialize(name)
+        puts "Being is create"
+        @name = name
+    end
+
+    def get_name
+        @name
+    end
+end
+b = Being.new("Jobs");
+puts b.get_name();
+
+//the constructor not called
+b2 = Being.allocate 
+</pre>
+
+
+<!-- more -->
+
+
+<h5>Constructor overloading</h5>
+
+<pre class="prettyprint linenums">
+class Person
+    def initialize name="unknown", age=0
+        @name = name
+        @age = age        
+    end
+    
+    def to_s
+        "Name: #{@name}, Age: #{@age}"
+    end
+end
+p1 = Person.new
+</pre>
+
+
+<h5>Methods</h5>
+
+<pre class="prettyprint linenums">
+class Circle
+   
+    @@PI = 3.141592
+    //belong to a class, not to an object
+
+    def initialize
+        @radius = 0
+    end
+
+    def set_radius radius
+        @radius = radius
+    end
+
+    def area
+        @radius * @radius * @@PI
+    end
+
+end
+
+c = Circle.new
+c.set_radius 5
+puts c.area
+</pre>
+
+
+<h5>Access modifiers</h5>
+
+<blockquote><p>Ruby has three access modifiers: public, protected and private.
+All data members are private
+Access modifiers can be used only on methods, default public
+If we call the method inside or outside the class definition.
+If we use or do not use the self keyword which points to the current receiver.
+protected called with the self keyword specified</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Some
+
+    def method1
+        puts "public method1 called"
+    end
+
+    public
+
+    def method2
+        puts "public method2 called"  
+    end
+
+    def method3
+        puts "public method3 called"
+        method1
+        self.method1
+    end          
+end
+
+s = Some.new
+s.method3
+</pre>
+
+
+<h5>Inheritance</h5>
+
+<pre class="prettyprint linenums">
+class Being
+
+    def initialize
+        puts "Being class created"
+    end
+end
+
+class Human &lt; Being
+
+   def initialize
+       super
+       puts "Human class created"
+   end
+end
+
+Being.new
+Human.new
+a = Drived.new
+puts "\n"
+puts Human.ancestors
+
+</pre>
+
+
+<h5>The super method</h5>
+
+<pre class="prettyprint linenums">
+
+class Base
+   
+    def show x=0, y=0
+        p "Base class, x: #{x}, y: #{y}"
+    end
+end
+
+class Derived &lt; Base
+
+    def show x, y
+        super
+        super x
+        super x, y
+        super()
+    end
+end
+
+d = Derived.new
+d.show 3, 3
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[ssh]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/21/ssh-config/"/>
+    <updated>2013-03-21T10:08:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/21/ssh-config</id>
+    <content type="html"><![CDATA[<h5>basic config</h5>
+
+<pre class="prettyprint linenums">
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    ForwardX11 yes
+    LogLevel=quiet 
+
+Host 15
+    User zengxunxun
+    Port 22
+    HostName 192.168.1.15
+</pre>
+
+
+<h5>copy public key</h5>
+
+<pre class="prettyprint linenums">
+ssh-copy-id
+</pre>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Iptables]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/21/iptable/"/>
+    <updated>2013-03-21T09:57:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/21/iptable</id>
+    <content type="html"><![CDATA[<h5>iptables basic rules</h5>
+
+<pre class="prettyprint linenums">
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [104:10009]
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+</pre>
+
+
+<!-- more -->
+
+
+<h5>iptables save</h5>
+
+<pre class="prettyprint linenums">
+echo "
+#!/bin/sh
+sudo iptables-restore &lt; /etc/iptables.rules
+exit 0
+" &gt; /etc/network/if-pre-up.d/iptables
+chmod  755 iptables
+</pre>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[boot4win7]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/20/boot-dot-ini/"/>
+    <updated>2013-03-20T12:13:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/20/boot-dot-ini</id>
+    <content type="html"><![CDATA[<pre class="prettyprint linenums">
+[boot loader]
+[operating systems]
+c:\grldr.mbr="Grub4dos"
+</pre>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Openbox Keybind]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/20/openbox/"/>
+    <updated>2013-03-20T09:32:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/20/openbox</id>
+    <content type="html"><![CDATA[<h5>openbox keybind for volume&amp;light control</h5>
+
+<pre class="prettyprint linenums">
+&lt;keybind key="XF86AudioRaiseVolume"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;command&gt;amixer set Master 5%+ unmute&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86AudioLowerVolume"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;command&gt;amixer set Master 5%- unmute&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86AudioMute"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;command&gt;amixer set Master toggle&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86MonBrightnessUp"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;command&gt;xbacklight -inc 10%&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86MonBrightnessDown"&gt;
+  &lt;action name="Execute"&gt;
+    &lt;command&gt;xbacklight -dec 10%&lt;/command&gt;
+  &lt;/action&gt;
+&lt;/keybind&gt;
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Strings in Ruby]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/19/ruby/"/>
+    <updated>2013-03-19T21:28:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/19/ruby</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://zetcode.com/lang/rubytutorial/strings/">Strings in Ruby Basic tutorial</a></li>
+<li><a href="http://ruby-doc.org/core-2.0/String.html">Strings Manual</a></li>
+</ul>
+
+
+<h5>Multiline</h5>
+
+<pre class="prettyprint linenums">
+puts %/
+Well, I'm sittin' here playing solitaire
+With my pearl-handled deck 
+The county won't give me no more methadone 
+And they cut off your welfare check/
+</pre>
+
+
+<h5>Concatenating</h5>
+
+<pre class="prettyprint linenums">
+lang = "Ruby" + " programming" + " languge"
+lang = "Perl" &lt;&lt; " programming" &lt;&lt; " language"
+lang = "Java".concat(" programming").concat(" language")
+</pre>
+
+
+<!-- more -->
+
+
+<h5>Freezing</h5>
+
+<blockquote><p>similar <code>const</code> in C,  cannot modify</p></blockquote>
+
+<pre class="prettyprint linenums">
+msg.freeze
+</pre>
+
+
+<h5>Comparing</h5>
+
+<pre class="prettyprint linenums">
+puts "Jane".eql? "Jan"
+puts "Jane".casecmp "Jane"
+</pre>
+
+
+<h5>Objects</h5>
+
+<pre class="prettyprint linenums">
+myMsg = String.new "Hello World"
+puts myMsg
+puts myMsg.upcase
+puts myMsg.size
+puts myMsg.reverse
+puts myMsg.include? "hello"
+puts myMsg.empty?
+puts myMsg.downcase
+puts myMsg.capitalize
+puts myMsg.swapcase
+puts myMsg.start_with? "Hello"
+puts myMsg.end_with? "World"
+if ("yes\n".chomp == "yes")
+    puts "yes"
+end
+puts myMsg.lstrip #leading whitespace removed
+puts myMsg.rstrip #trailing whitespace removed.
+puts myMsg.strip
+puts myMsg.scan
+myMsg = "hello|world|"
+kk = myMsg.split(/\|/);
+kk.each do
+    |word|
+    puts word.strip 
+end
+</pre>
+
+
+<h5>Formatting</h5>
+
+<blockquote><p>Much like the C <code>prinf</code></p></blockquote>
+
+<pre class="prettyprint linenums">
+puts "%s %d" % ["En taro",12] 
+puts "%d" % 300 #decimal
+puts "%x" % 300 #hexadecimal
+puts "%o" % 300 #octal
+puts "%b" % 300 #binary
+puts "%e" % (5/3.0) #scientific
+# # flag adds a prefix to binary, octal and hexadecimal formats.
+puts "%#x" % 300 #0x
+puts "%#o" % 300 #0
+puts "%#b" % 300 #0b
+</pre>
+
+
+<h5>Traverse each char</h5>
+
+<pre class="prettyprint linenums">
+msg = "hello world"
+msg.each_char do |c|
+    print "#{c} has ASCII code %d\n" % c.ord    
+end
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(四)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/19/javascript3/"/>
+    <updated>2013-03-19T21:00:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/19/javascript3</id>
+    <content type="html"><![CDATA[<ul>
+<li><h5>RegExp attributes</h5>
+
+<blockquote><p>By default, the RegExp object looks only for the first matching pattern.</p></blockquote></li>
+</ul>
+
+
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Attribute Character</th>
+<th>Description</th>
+<th></th>
+</tr>
+<tr>
+<td>G</td>
+<td>Global match</td>
+<td></td>
+</tr>
+<tr>
+<td>I</td>
+<td>Pattern is case-insensitive</td>
+<td></td>
+</tr>
+<tr>
+<td>M</td>
+<td>Multi-line flag</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+<!-- more -->
+
+
+<ul>
+<li><h5>Text, Numbers, and Punctuation</h5></li>
+</ul>
+
+
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Matches</th>
+<th></th>
+</tr>
+<tr>
+<td>\d</td>
+<td>digit from 0 to 9</td>
+<td></td>
+</tr>
+<tr>
+<td>\D</td>
+<td>not a digit</td>
+<td></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>A–Z, a–z, 0–9, _</td>
+<td></td>
+</tr>
+<tr>
+<td>\W</td>
+<td>non-word character</td>
+<td></td>
+</tr>
+<tr>
+<td>\s</td>
+<td>whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>\S</td>
+<td>non-whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>.</td>
+<td>single character ther than \n</td>
+<td></td>
+</tr>
+<tr>
+<td>[&#8230;]</td>
+<td>characters inside brackets</td>
+<td></td>
+</tr>
+<tr>
+<td>[^&#8230;]</td>
+<td>not one of the brackets</td>
+</tr>
+</tbody>
+</table>
+
+
+<ul>
+<li><h5>Repetition Characters</h5></li>
+</ul>
+
+
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n or more of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>at least n and at most m of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>previous item zero or one time</td>
+</tr>
+<tr>
+<td>+</td>
+<td>previous item one or more times</td>
+</tr>
+<tr>
+<td>*</td>
+<td>previous item zero or more times</td>
+</tr>
+</tbody>
+</table>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[tmux startup script]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/19/tmux-startup-script/"/>
+    <updated>2013-03-19T18:33:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/19/tmux-startup-script</id>
+    <content type="html"><![CDATA[<h5>Create session if none exists, otherwise attach</h5>
+
+<pre class="prettyprint linenums">
+#!/bin/bash
+if [ ! $# -eq 1 ];then
+    exit -1
+fi
+session="session.$1"
+tmux has-session -t "$session" 2&gt;/dev/null
+if [ $? -eq 0 ];then
+    tmux attach -t "$session"
+else
+    tmux new-session -s "$session"
+fi
+exit 0
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(三)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript3/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript3</id>
+    <content type="html"><![CDATA[<h5>Math.PI</h5>
+
+<blockquote><p>不解释</p></blockquote>
+
+<h5>abs()</h5>
+
+<blockquote><p>returns the absolute value of the number passed as its parameter.</p></blockquote>
+
+<pre class="prettyprint linenums">
+var myNumber = -101;
+document.write(Math.abs(myNumber));
+</pre>
+
+
+<h5>ceil()</h5>
+
+<blockquote><p>rounds a number up to the next largest whole number or integer.</p></blockquote>
+
+<pre class="prettyprint linenums">
+var myNumber = 101.01;
+document.write(Math.ceil(myNumber) + "&lt;br/&gt;");
+document.write(parseInt(myNumber));
+</pre>
+
+
+<!-- more -->
+
+
+<h5>floor()</h5>
+
+<blockquote><p>removes any numbers after the decimal point.</p></blockquote>
+
+<h5>round()</h5>
+
+<blockquote><p>rounds up only if the decimal part is .5 or greater, and rounds down otherwise.</p></blockquote>
+
+<h5>random()</h5>
+
+<blockquote><p>returns a random floating-point number in the range between 0 and 1</p></blockquote>
+
+<h5>pow()</h5>
+
+<blockquote><p>pow(2,8) equal to 2<sup>8</sup></p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(二)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript-oop/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript-oop</id>
+    <content type="html"><![CDATA[<ul>
+<li>A constructor</li>
+<li>Method definitions</li>
+<li>Properties</li>
+</ul>
+
+
+<h5>4 ways to define a JavaScript class</h5>
+
+<!--more-->
+
+
+<pre class="prettyprint linenums">
+// Method 1
+function customerBooking1(bookId, customName) {
+    this.bookId = bookId;
+    this.customName = customName;
+}
+customerBooking1.prototype.getInfo = function() {
+    document.write(this.bookId + "&lt;br/&gt;");
+    document.write(this.customName + "&lt;br/&gt;");
+}
+var firstbook = new customerBooking1(1234, "Hello world");
+firstbook.getInfo();
+//Method 2
+function customerBooking2(bookId, customName) {
+    this.bookId = bookId;
+    this.customName = customName;
+    this.getInfo = function(){
+        document.write(this.bookId + "&lt;br/&gt;");
+        document.write(this.customName + "&lt;br/&gt;");
+    }
+}
+var firstbook = new customerBooking2(1234, "Hello world");
+firstbook.getInfo();
+//Method3
+var customerBooking3  = function(bookId, customName){
+    this.bookId = bookId;
+    this.customName = customName;
+    this.getInfo = function(){
+        document.write(this.bookId + "&lt;br/&gt;");
+        document.write(this.customName + "&lt;br/&gt;");
+    }
+}
+var firstbook = new customerBooking3(1234, "Hello world");
+firstbook.getInfo();
+//Method4
+var customerBooking4 = {
+    init: function(bookId, customName) {
+        this.bookId = bookId;
+        this.customName = customName;
+    },
+    getInfo: function() {
+        document.write(this.bookId + "&lt;br/&gt;");
+        document.write(this.customName + "&lt;br/&gt;");
+
+    }
+}
+customerBooking4.init(1234, "hello world");
+customerBooking4.getInfo();
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(一)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript</id>
+    <content type="html"><![CDATA[<h5>length</h5>
+
+<blockquote><p> The length of the string in characters</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+document.write(msg.length);
+</pre>
+
+
+<h5>indexOf() and lastIndexOf()</h5>
+
+<blockquote><p>The methods that allow you to search a string for the existence of another string and that return the character position of the string if found</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+position = msg.indexOf("world");
+document.write(position);
+</pre>
+
+
+<pre class="prettyprint linenums">
+var msg = "Hello Jeremy. How are you Jeremy";
+position = msg.lastIndexOf("Jeremy");
+document.write(position);
+</pre>
+
+
+<!--more-->
+
+
+<h5>substr() and substring()</h5>
+
+<blockquote><p>Copying Part of a String</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = "Hello Jeremy. How are you Jermy"
+document.write(msg.substring(4,10));
+//the character start position and the character after the last character desired in the substring
+document.write(msg.substr(4,10));
+//start position of the first character and  the length of the string of characters that you want to cut out of the longer string
+</pre>
+
+
+<h5>toLowerCase() and toUpperCase()</h5>
+
+<blockquote><p>Converting Case</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = "Hello World";
+document.write(msg.toLowerCase() + "&lt;br/&gt;");
+document.write(msg.toUpperCase());
+</pre>
+
+
+<h5>charAt() and charCodeAt()</h5>
+
+<blockquote><p> The methods for returning the character or character code at a certain position in the string</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+for( i = 0 ; i &lt; msg.length; i++) {
+    document.write(i + ":" + msg.charCodeAt(i) + ":" + msg.charAt(i) + "&lt;br/&gt;");
+}
+</pre>
+
+
+<h5>fromCharCode()</h5>
+
+<blockquote><p>Converting Character Codes to a String</p></blockquote>
+
+<pre class="prettyprint linenums">
+for(var i = 65; i &lt; 85; i++) {
+    document.write(String.fromCharCode(i) + " ");
+}
+</pre>
+
+
+<h5>split()</h5>
+
+<blockquote><p> splits a single string into an array of substrings.</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = "A,B,C,D,E,F";
+var TextArray = msg.split(',');
+var i;
+for(i = 0; i &lt; TextArray.length; i++) {
+    document.write(TextArray[i]);
+}
+document.write("&lt;br/&gt;");
+for(i = 0; i &lt; msg.length; i++) {
+    document.write(msg[i]);
+}
+</pre>
+
+
+<h5>replace()</h5>
+
+<pre class="prettyprint linenums">
+var msg = "The event will be in May, the 21st of June";
+myMsg = msg.replace("May","June");
+</pre>
+
+
+<h5>search()</h5>
+
+<blockquote><p>If the text is found, the character position at which it was found is returned; otherwise -1 is returned.</p></blockquote>
+
+<pre class="prettyprint linenums">
+var myString = "Beginning JavaScript, Beginning Java, Professional JavaScript";
+alert(myString.search("Java"));
+</pre>
+
+
+<h5>match()</h5>
+
+<blockquote><p>similar to the search(), Success it returns an array; otherwise null is returns</p></blockquote>
+
+<hr />
+
+<h5>参考书 <a href="https://freecodingtutorial.files.wordpress.com/2011/10/wrox-beginning-javascript1.pdf">Beginning JavaScript 4th edition</a></h5>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[queue.c]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/15/queue-dot-h/"/>
+    <updated>2013-03-15T16:49:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/15/queue-dot-h</id>
+    <content type="html"><![CDATA[<div><pre class="prettyprint linenums">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/queue.h&gt;
+
+/*
+ * LIST_HEAD(name, type)
+ * LIST_HEAD_INITIALIZER(head)
+ * LIST_ENTRY(type)
+ * LIST_INIT(head)
+ * LIST_INSERT_AFTER(listelm, elm, field)
+ * LIST_INSERT_BEFORE(listelm, elm, field)
+ * LIST_INSERT_HEAD(head, elm, field)
+ * LIST_REMOVE(elm, field)
+ * LIST_FOREACH(var, head, field)
+ * LIST_EMPTY(head)
+ * LIST_FIRST(head)
+ * LIST_NEXT(elm, field)
+ * */
+
+LIST_HEAD(personHead, person) head;
+
+#define SIZE_PERSON sizeof(struct person)
+
+typedef struct person{
+    char *name;
+    int age;
+    LIST_ENTRY(person) entries;
+}persNode, *perNodePtr;
+
+perNodePtr foo_struct(perNodePtr p, char *name, int age)
+{
+    p = (perNodePtr)malloc(SIZE_PERSON);
+    p-&gt;name = name;
+    p-&gt;age = age;
+    return p;
+}
+
+int main()
+{
+    LIST_INIT(&amp;head);
+    perNodePtr p1 = NULL;
+    p1 = foo_struct(p1, "Jim", 12);
+    LIST_INSERT_HEAD(&amp;head, p1, entries);
+
+    perNodePtr p2 = NULL;
+    p2 = foo_struct(p2, "Tom", 33);
+    LIST_INSERT_AFTER(p1, p2, entries);
+
+    perNodePtr p3 = NULL;
+    p3 = foo_struct(p2, "Jerry", 21);
+    LIST_INSERT_AFTER(p1, p3, entries);
+
+    perNodePtr p;
+    while(NULL != (p = LIST_FIRST(&amp;head))) {
+        LIST_REMOVE(p, entries);
+        free(p);
+    }
+
+    LIST_FOREACH(p, &amp;head, entries) {
+        printf("%s\n%d\n", p-&gt;name, p-&gt;age);
+    }
+    return 0;
+}
+</pre></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[dbus]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/15/dbus/"/>
+    <updated>2013-03-15T14:58:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/15/dbus</id>
+    <content type="html"><![CDATA[<p><a href="http://www.freedesktop.org/wiki/Software/dbus">dbus 官网</a></p>
+
+<pre class="prettyprint linenums">
+&lt;policy context="default"&gt;
+  &lt;!-- Deny everything then punch holes --&gt;
+  &lt;allow send_interface="*"/&gt;
+  &lt;allow receive_interface="*"/&gt;
+  &lt;allow own="*"/&gt;
+  &lt;!-- But allow all users to connect --&gt;
+  &lt;allow user="*"/&gt;
+  &lt;!-- Allow anyone to talk to the message bus --&gt;
+  &lt;allow send_destination="org.freedesktop.DBus"/&gt;
+  &lt;allow receive_sender="org.freedesktop.DBus"/&gt;
+  &lt;!-- valid replies are always allowed --&gt;
+  &lt;allow send_requested_reply="true"/&gt;
+  &lt;allow receive_requested_reply="true"/&gt;
+&lt;/policy&gt; 
+</pre>
+
+
+
+
+<pre class="prettyprint linenums">
+typedef struct DBusObjectPathVTable DBusObjectPathVTable;
+struct DBusObjectPathVTable
+{
+    DBusObjectPathUnregisterFunction unregister_function; 
+    DBusObjectPathMessageFunction message_function; 
+    void (* dbus_internal_pad1) (void *); 
+    void (* dbus_internal_pad2) (void *); 
+    void (* dbus_internal_pad3) (void *); 
+    void (* dbus_internal_pad4) (void *); 
+};
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[xterm colors]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/15/bash-color/"/>
+    <updated>2013-03-15T14:49:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/15/bash-color</id>
+    <content type="html"><![CDATA[<blockquote><p>The small bash script can display the terminal supported color. Use it in vim color plugin</p></blockquote>
+
+<pre class="prettyprint linenums">
+#!/bin/bash
+for i in {0..255} ; do
+    printf "\x1b[38;5;${i}mcolour${i}\n"
+done
+</pre>
+
+
+<blockquote><p><a href="http://www.frexx.de/xterm-256-notes/data/colortable16.sh">More complex one</a></p></blockquote>
+
+<!--more-->
+
+
+<p><img src="http://zengxunxun.github.com/downloads/image/xterm_color.png" alt="xerm color" class="img-rounded"/></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Libapr Programming Tutorial]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/14/libapr-programming-tutorial/"/>
+    <updated>2013-03-14T21:49:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/14/libapr-programming-tutorial</id>
+    <content type="html"><![CDATA[<pre class="prettyprint linenums">
+#include &lt;libapr/apr_general.h&gt;
+#include &lt;libapr/apr_file_io.h&gt;
+</pre>
+
+
+<blockquote><p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">open</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+apr_status_t 
+apr_file_open(
+    apr_file_t **newf,  //result argument
+    const char *fname,  //file name path
+    apr_int32_t flag,   //open flag
+    apr_fileperms_t perm,  //access permission
+    apr_pool_t *pool   //memory pool to use
+);
+</pre>
+
+
+<blockquote><p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">read</a> / <a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">write</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+apr_status_t apr_file_read(
+    apr_file_t *thefile, 
+    void *buf, 
+    apr_size_t *nbytes  //value-result argument
+);
+</pre>
+
+
+<pre class="prettyprint linenums">
+apr_status_t apr_file_write(
+    apr_file_t *thefile, 
+    void *buf, 
+    apr_size_t *nbytes  //value-result argument
+);
+</pre>
+
+
+<blockquote><p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">close</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+apr_status_t apr_file_close (apr_file_t *file)
+apr_pool_destroy
+</pre>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Apache Portable Runtime Tutorial]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/14/libapr/"/>
+    <updated>2013-03-14T14:44:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/14/libapr</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://dev.ariel-networks.com/apr/apr-tutorial/html/apr-tutorial.html">Libapr(Apache Portable Runtime) Programming Tutorial</a></li>
+<li><a href="https://apr.apache.org/docs/apr/1.4/">Programmer&#8217;s Manual</a></li>
+<li>In general, objects lifetime control is the most difficult part in programming. Thus, there are many other techniques for it, such as smart pointer, GC(garbage collection) and so on. Note that it is a bit hard to use such techniques at the same time. Since memory pool is one of such techniques, you have to be careful about the mixture.</li>
+<li>Memory Pool (apr_pool_t) <a href="http://dev.ariel-networks.com/apr/apr-tutorial/sample/mp-sample.c">mp-sample.c</a></li>
+</ul>
+
+
+<pre class="prettyprint linenums">
+apr_status_t apr_pool_initialize (void);
+void apr_pool_terminate (void):w
+void* apr_pcalloc (apr_pool_t *p, apr_size_t size)
+void apr_pool_destroy (apr_pool_t *p)
+</pre>
+
+
+<ul>
+<li>-D_LARGEFILE64_SOURCE fix <code>error: unknown type name 'off64_t'</code></li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>file handling <a href="http://dev.ariel-networks.com/apr/apr-tutorial/html/apr-tutorial-5.html">file handling</a></li>
+</ul>
+
+
+<pre class="prettyprint linenums">
+apr_file_open
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fork a daemon process]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/11/fork-a-daemon-process/"/>
+    <updated>2013-03-11T16:13:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/11/fork-a-daemon-process</id>
+    <content type="html"><![CDATA[<ul>
+<li>处理信号</li>
+</ul>
+
+
+<div><pre class="prettyprint linenums">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;signal.h&gt;
+#include &lt;unistd.h&gt;
+
+static int keep_going = 1;
+
+static void termination_handler(int signum) 
+{
+    fprintf(stderr,"SIGTERM received! exit!\n");
+    keep_going = 0;
+}
+
+int main()
+{
+    struct sigaction act;
+    act.sa_handler = termination_handler;
+    sigemptyset(&amp;act.sa_mask);
+    sigaction(SIGTERM, &amp;act, NULL);
+    sigaction(SIGUSR1, &amp;act, NULL);
+    fprintf(stderr, "%d\n", getpid());
+    while(keep_going);
+    fprintf(stderr, "exit");    
+    return 0;
+}
+</pre></div>
+
+
+<!--more-->
+
+
+<ul>
+<li>创建守护进程</li>
+</ul>
+
+
+<div><pre class="prettyprint linenums">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+
+#ifndef HAVE_DAEMON
+
+/* Daemonize myself. */
+int daemon (int nochdir, int noclose)
+{
+    pid_t pid;
+
+    pid = fork ();
+
+    /* In case of fork is error. */
+    if (pid &lt; 0)
+    {
+        return -1;
+    }
+
+    /* In case of this is parent process. */
+    if (pid != 0)
+        exit (0);
+
+    /* Become session leader and get pid. */
+    pid = setsid();
+
+    if (pid == -1)
+    {
+        return -1;
+    }
+
+    /* Change directory to root. */
+    if (! nochdir)
+        chdir ("/");
+
+    /* File descriptor close. */
+    if (! noclose)
+    {
+        int fd;
+        fd = open ("/dev/null", O_RDWR, 0);
+        if (fd != -1)
+        {
+            dup2 (fd, STDIN_FILENO);
+            dup2 (fd, STDOUT_FILENO);
+            dup2 (fd, STDERR_FILENO);
+            if (fd &gt; 2)
+                close (fd);
+        }
+    }
+    umask(0027);
+    return 0;
+}
+
+int main()
+{
+    if (daemon(1, 1)) {
+        fprintf(stderr, "daemon() failed!");
+    }
+    while(1);
+    return 0;
+}
+#endif /* HAVE_DAEMON */
+</pre></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Pages]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/07/git-pages/"/>
+    <updated>2013-03-07T14:25:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/07/git-pages</id>
+    <content type="html"><![CDATA[<blockquote><p>创建 <a href="https://github.com/">github pages</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+mkdir demo.github.com
+cd demo.github.com
+touch README.md
+echo "hello world" &gt; index.html
+git init
+git add .
+git commit -a -m "first commit" git remote add origin git@github.com:demo/demo.github.com.git
+git push origin master
+</pre>
+
+
+<!--more-->
+
+
+<blockquote><p>创建 <a href="https://gitcafe.com/">gitcafe pages</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+mkdir demo
+cd demo
+touch README.md
+echo "hello world" &gt; index.html
+git init
+git add .
+git commit -a -m "first commit"
+git remote add origin git@gitcafe.com:demo/demo.git
+git checkout -b gitcafe-pages
+git push origin gitcafe-pages 
+</pre>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: JavaScript | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/javascript/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(四)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/19/javascript3/"/>
+    <updated>2013-03-19T21:00:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/19/javascript3</id>
+    <content type="html"><![CDATA[<ul>
+<li><h5>RegExp attributes</h5>
+
+<blockquote><p>By default, the RegExp object looks only for the first matching pattern.
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Attribute Character</th>
+<th>Description</th>
+<th></th>
+</tr>
+<tr>
+<td>G</td>
+<td>Global match</td>
+<td></td>
+</tr>
+<tr>
+<td>I</td>
+<td>Pattern is case-insensitive</td>
+<td></td>
+</tr>
+<tr>
+<td>M</td>
+<td>Multi-line flag</td>
+</tr>
+</tbody>
+</table>
+</p></blockquote></li>
+</ul>
+
+
+<!-- more -->
+
+
+<ul>
+<li><h5>Text, Numbers, and Punctuation</h5>
+
+<p><table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Matches</th>
+<th></th>
+</tr>
+<tr>
+<td>\d</td>
+<td>digit from 0 to 9</td>
+<td></td>
+</tr>
+<tr>
+<td>\D</td>
+<td>not a digit</td>
+<td></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>A–Z, a–z, 0–9, _</td>
+<td></td>
+</tr>
+<tr>
+<td>\W</td>
+<td>non-word character</td>
+<td></td>
+</tr>
+<tr>
+<td>\s</td>
+<td>whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>\S</td>
+<td>non-whitespace character</td>
+<td></td>
+</tr>
+<tr>
+<td>.</td>
+<td>single character ther than \n</td>
+<td></td>
+</tr>
+<tr>
+<td>[...]</td>
+<td>characters inside brackets</td>
+<td></td>
+</tr>
+<tr>
+<td>[<sup>...]</sup></td>
+<td>not one of the brackets</td>
+</tr>
+</tbody>
+</table>
+</p></li>
+<li><h5>Repetition Characters</h5>
+
+<p><table class="table table-hover">
+<tbody>
+<tr>
+<th>Character</th>
+<th>Meaning</th>
+</tr>
+<tr>
+<td>{n}</td>
+<td>n of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td>n or more of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td>at least n and at most m of the previous item</td>
+<td></td>
+</tr>
+<tr>
+<td>?</td>
+<td>previous item zero or one time</p></li></td>
+</tr>
+<tr>
+<td><li></td>
+<td>previous item one or more times</li></td>
+</tr>
+<tr>
+<td><li></td>
+<td>previous item zero or more times</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(三)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript3/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript3</id>
+    <content type="html"><![CDATA[<h5>Math.PI</h5>
+
+<blockquote><p>不解释</p></blockquote>
+
+<h5>abs()</h5>
+
+<blockquote><p>returns the absolute value of the number passed as its parameter.
+<pre class="prettyprint linenums">
+var myNumber = -101;
+document.write(Math.abs(myNumber));
+</pre></p></blockquote>
+
+<h5>ceil()</h5>
+
+<blockquote><p>rounds a number up to the next largest whole number or integer.
+<pre class="prettyprint linenums">
+var myNumber = 101.01;
+document.write(Math.ceil(myNumber) + "&lt;br/&gt;");
+document.write(parseInt(myNumber));
+</pre></p></blockquote>
+
+<!-- more -->
+
+
+<h5>floor()</h5>
+
+<blockquote><p>removes any numbers after the decimal point.</p></blockquote>
+
+<h5>round()</h5>
+
+<blockquote><p>rounds up only if the decimal part is .5 or greater, and rounds down otherwise.</p></blockquote>
+
+<h5>random()</h5>
+
+<blockquote><p>returns a random floating-point number in the range between 0 and 1</p></blockquote>
+
+<h5>pow()</h5>
+
+<blockquote><p>pow(2,8) equal to 2<sup>8</sup></p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(二)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript-oop/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript-oop</id>
+    <content type="html"><![CDATA[<ul>
+<li>A constructor</li>
+<li>Method definitions</li>
+<li>Properties</li>
+</ul>
+
+
+<h5>4 ways to define a JavaScript class</h5>
+
+<!--more-->
+
+
+<p><pre class="prettyprint linenums">
+// Method 1
+function customerBooking1(bookId, customName) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.bookId = bookId;
+this.customName = customName;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+customerBooking1.prototype.getInfo = function() {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.write(this.bookId + "&amplt;br/&ampgt;");
+document.write(this.customName + "&amplt;br/&ampgt;");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+var firstbook = new customerBooking1(1234, "Hello world");
+firstbook.getInfo();
+//Method 2
+function customerBooking2(bookId, customName) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.bookId = bookId;
+this.customName = customName;
+this.getInfo = function(){
+    document.write(this.bookId + "&amplt;br/&ampgt;");
+    document.write(this.customName + "&amplt;br/&ampgt;");
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+var firstbook = new customerBooking2(1234, "Hello world");
+firstbook.getInfo();
+//Method3
+var customerBooking3  = function(bookId, customName){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.bookId = bookId;
+this.customName = customName;
+this.getInfo = function(){
+    document.write(this.bookId + "&amplt;br/&ampgt;");
+    document.write(this.customName + "&amplt;br/&ampgt;");
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+var firstbook = new customerBooking3(1234, "Hello world");
+firstbook.getInfo();
+//Method4
+var customerBooking4 = {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;init: function(bookId, customName) {
+    this.bookId = bookId;
+    this.customName = customName;
+},
+getInfo: function() {
+    document.write(this.bookId + "&amplt;br/&ampgt;");
+    document.write(this.customName + "&amplt;br/&ampgt;");
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+customerBooking4.init(1234, "hello world");
+customerBooking4.getInfo();
+</pre></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(一)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript</id>
+    <content type="html"><![CDATA[<h5>length</h5>
+
+<blockquote><p> The length of the string in characters
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+document.write(msg.length);
+</pre></p>
+
+<h5>indexOf() and lastIndexOf()</h5>
+
+<p>The methods that allow you to search a string for the existence of another string and that return the character position of the string if found
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+position = msg.indexOf("world");
+document.write(position);
+</pre>
+<pre class="prettyprint linenums">
+var msg = "Hello Jeremy. How are you Jeremy";
+position = msg.lastIndexOf("Jeremy");
+document.write(position);
+</pre></p></blockquote>
+
+<!--more-->
+
+
+<h5>substr() and substring()</h5>
+
+<blockquote><p>Copying Part of a String
+<pre class="prettyprint linenums">
+var msg = "Hello Jeremy. How are you Jermy"
+document.write(msg.substring(4,10));
+//the character start position and the character after the last character desired in the substring
+document.write(msg.substr(4,10));
+//start position of the first character and  the length of the string of characters that you want to cut out of the longer string
+</pre></p>
+
+<h5>toLowerCase() and toUpperCase()</h5>
+
+<p>Converting Case
+<pre class="prettyprint linenums">
+var msg = "Hello World";
+document.write(msg.toLowerCase() + "&lt;br/&gt;");
+document.write(msg.toUpperCase());
+</pre></p>
+
+<h5>charAt() and charCodeAt()</h5>
+
+<p> The methods for returning the character or character code at a certain position in the string
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+for( i = 0 ; i &amplt; msg.length; i++) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.write(i + ":" + msg.charCodeAt(i) + ":" + msg.charAt(i) + "&amplt;br/&ampgt;");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+</pre></p>
+
+<h5>fromCharCode()</h5>
+
+<p>Converting Character Codes to a String
+<pre class="prettyprint linenums">
+for(var i = 65; i &amplt; 85; i++) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.write(String.fromCharCode(i) + " ");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+</pre></p>
+
+<h5>split()</h5>
+
+<p> splits a single string into an array of substrings.
+<pre class="prettyprint linenums">
+var msg = "A,B,C,D,E,F";
+var TextArray = msg.split(',');
+var i;
+for(i = 0; i &amplt; TextArray.length; i++) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.write(TextArray[i]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+document.write("&lt;br/&gt;");
+for(i = 0; i &amplt; msg.length; i++) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.write(msg[i]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+</pre></p>
+
+<h5>replace()</h5>
+
+<p><pre class="prettyprint linenums">
+var msg = "The event will be in May, the 21st of June";
+myMsg = msg.replace("May","June");
+</pre></p>
+
+<h5>search()</h5>
+
+<p>If the text is found, the character position at which it was found is returned; otherwise -1 is returned.
+<pre class="prettyprint linenums">
+var myString = "Beginning JavaScript, Beginning Java, Professional JavaScript";
+alert(myString.search("Java"));
+</pre></p>
+
+<h5>match()</h5>
+
+<p>similar to the search(), Success it returns an array; otherwise null is returns</p></blockquote>
+
+<hr />
+
+<h5>参考书 <a href="https://freecodingtutorial.files.wordpress.com/2011/10/wrox-beginning-javascript1.pdf">Beginning JavaScript 4th edition</a></h5>
+]]></content>
+  </entry>
+  
+</feed>

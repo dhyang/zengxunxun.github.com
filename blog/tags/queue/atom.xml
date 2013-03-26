@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: queue | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/queue/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[queue.c]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/15/queue-dot-h/"/>
+    <updated>2013-03-15T16:49:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/15/queue-dot-h</id>
+    <content type="html"><![CDATA[<p><div class='bogus-wrapper'><notextile><div><pre class="prettyprint linenums">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/queue.h&gt;
+
+/*
+ * LIST_HEAD(name, type)
+ * LIST_HEAD_INITIALIZER(head)
+ * LIST_ENTRY(type)
+ * LIST_INIT(head)
+ * LIST_INSERT_AFTER(listelm, elm, field)
+ * LIST_INSERT_BEFORE(listelm, elm, field)
+ * LIST_INSERT_HEAD(head, elm, field)
+ * LIST_REMOVE(elm, field)
+ * LIST_FOREACH(var, head, field)
+ * LIST_EMPTY(head)
+ * LIST_FIRST(head)
+ * LIST_NEXT(elm, field)
+ * */
+
+LIST_HEAD(personHead, person) head;
+
+#define SIZE_PERSON sizeof(struct person)
+
+typedef struct person{
+    char *name;
+    int age;
+    LIST_ENTRY(person) entries;
+}persNode, *perNodePtr;
+
+perNodePtr foo_struct(perNodePtr p, char *name, int age)
+{
+    p = (perNodePtr)malloc(SIZE_PERSON);
+    p-&gt;name = name;
+    p-&gt;age = age;
+    return p;
+}
+
+int main()
+{
+    LIST_INIT(&amp;head);
+    perNodePtr p1 = NULL;
+    p1 = foo_struct(p1, "Jim", 12);
+    LIST_INSERT_HEAD(&amp;head, p1, entries);
+
+    perNodePtr p2 = NULL;
+    p2 = foo_struct(p2, "Tom", 33);
+    LIST_INSERT_AFTER(p1, p2, entries);
+
+    perNodePtr p3 = NULL;
+    p3 = foo_struct(p2, "Jerry", 21);
+    LIST_INSERT_AFTER(p1, p3, entries);
+
+    perNodePtr p;
+    while(NULL != (p = LIST_FIRST(&amp;head))) {
+        LIST_REMOVE(p, entries);
+        free(p);
+    }
+
+    LIST_FOREACH(p, &amp;head, entries) {
+        printf("%s\n%d\n", p-&gt;name, p-&gt;age);
+    }
+    return 0;
+}
+</pre></div></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

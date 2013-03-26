@@ -1,0 +1,312 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Ruby - zengxx'notes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="zengxunxun" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+        if(navigator.userAgent.indexOf("MSIE") != -1) {
+            var version = navigator.userAgent.match(/MSIE ([\d.]+)/)[1];
+            if(Math.round(version) < 9) {
+                document.write("Not support IE " + Math.round(version) + ", Please change your browser.<br/><br/>");
+                document.write("不支持 IE" + Math.round(version) + ", 请更换浏览器.");
+                window.stop ? window.stop() : document.execCommand("Stop");
+            }
+        }
+    </script>
+    <link rel="shortcut icon" href="/atom.xml" />
+	<link rel="alternate" href="/atom.xml" title="zengxx'notes" type="application/atom+xml">
+    <link rel="stylesheet" href="//www.bootcss.com/assets/css/bootstrap.min.css?v2.3.1" type="text/css"/>
+    <link rel="stylesheet" href="//www.bootcss.com/assets/css/bootstrap-responsive.min.css?v2.3.1" type="text/css"/>
+    <link rel="stylesheet" href="//www.bootcss.com/assets/js/google-code-prettify/prettify.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/ui.totop.css" type="text/css" />
+    <link rel="stylesheet" href="/css/docs.css" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header"><div class="row">
+    <div class="offset2 span8">
+        <p class="opensans huge fit-height">zengxx's notes</p>
+        <blockquote>
+            <p class="opensans large muted">Sweet mother of monkey milk, a gold coin!</p>
+        </blockquote>
+    </div>
+</div>
+</div>
+        <div id="navigator"><div class="row">
+    <div class="offset2 span8">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <!--
+                    <li><a href="/blog/archives">Archives</a></li>
+                    -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret">&nbsp;</b></a> 
+                        <ul class="dropdown-menu">
+                            <li><a href='/blog/categories/c'>C</a></li>
+<li><a href='/blog/categories/javascript'>JavaScript</a></li>
+<li><a href='/blog/categories/linux'>Linux</a></li>
+<li><a href='/blog/categories/note'>note</a></li>
+<li><a href='/blog/categories/octopress'>Octopress</a></li>
+<li><a href='/blog/categories/other'>other</a></li>
+<li><a href='/blog/categories/ruby'>Ruby</a></li>
+<li><a href='/blog/categories/shell'>Shell</a></li>
+ 
+                            <li class="divider"></li>
+                            <li class="nav-header">All(20)</li>
+                        </ul>
+                    </li>
+                    <li><a href="/blog/tags" id="tags">Tags</a></li>
+                    <!--
+                    <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+                    -->
+                    <li><a href="/blog/bookmarks">BookMarks</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li><a href="/blog/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <div id="content"><div class="row">
+    <div class="offset3 span6">
+        <div class="article">
+            <div class="fit-height">
+                <div>
+                    <h3>
+                        <span class="color1">
+                            Ruby
+                        </span>
+                        
+                        <small>OOPII</small>
+                        
+                    </h3>
+                    <div>
+                    <span class="badge">2013-03-25</span>
+                    <span class="pull-right">
+
+
+    <span class="label label-info"><a href='/blog/tags/opp/'>OPP</a></span>&nbsp;<span class="label label-info"><a href='/blog/tags/ruby/'>Ruby</a></span>
+
+
+</span>
+                    </div>
+                </div>
+            </div>
+            <div> <h5>Attribute accessors</h5>
+
+<blockquote><p>The attr_reader creates getter methods. The attr_writer method creates setter methods and instance variables for this setters. The attr_accessor method creates both getter, setter methods and their instance variables.</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Car
+    attr_reader :name, :price
+    attr_writer :name, :price  
+    def to_s
+        "#{@name}: #{@price}"
+    end
+end
+</pre>
+
+
+<pre class="prettyprint linenums">
+class Book
+   attr_accessor :title, :pages    
+end
+b1 = Book.new
+b1.title = "Hidden motives"
+b1.pages = 255
+p "The book #{b1.title} has #{b1.pages} pages"
+</pre>
+
+
+<h5>Class constants</h5>
+
+<pre class="prettyprint linenums">
+class MMath
+    PI = 3.1415
+end
+puts MMath::PI
+</pre>
+
+
+<!-- more -->
+
+
+<h5>The to_s method</h5>
+
+<blockquote><p>The to_s method belongs to this class.</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Being
+    def to_s
+        "hello world"
+    end
+end
+
+b = Being.new
+puts b
+</pre>
+
+
+<h5>Operator overloading</h5>
+
+<pre class="prettyprint linenums">
+class Being
+    attr_accessor :radius
+
+    def initialize r
+        @radius = r
+    end
+
+    def +(other)
+        Being.new (@radius + other.radius)
+    end
+
+    def to_s
+        "output #{@radius}"
+    end
+end
+
+a1 = Being.new 1
+a2 = Being.new 2
+puts a1+a2
+</pre>
+
+
+<h5>Class methods</h5>
+
+<blockquote><p>Class methods are called on a class. They cannot be called on an instance of a class.</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Being 
+    def self.info1
+       "This is a Wood class info1" 
+    end
+
+    class &lt;&lt; Being 
+        def info2
+           "This is a Brick class info2" 
+        end
+    end
+end
+
+def Being.info3
+   "This is a Rock class info3" 
+end
+
+puts Being.info1
+puts Being.info2
+puts Being.info3
+</pre>
+
+
+<h5>instance method</h5>
+
+<blockquote><p> Instance methods belong to an instance of an object</p></blockquote>
+
+<pre class="prettyprint linenums">
+class Being 
+    attr_accessor :info2
+    def info1
+        "This is info1 object"
+    end
+end
+
+a = Being.new
+puts a.info1
+
+b = Being.new
+b.info2 = "This is info2 object"
+puts b.info2
+
+c = Being.new
+def c.info3
+    "This is info3 object" 
+end
+puts c.info3
+</pre>
+
+
+<h5>Polymorphism</h5>
+
+<pre class="prettyprint linenums">
+class Animal
+    def make_noise 
+        "Some noise"
+    end
+    def sleep 
+        puts "#{self.class.name} is sleeping." 
+    end
+end
+class Dog &lt; Animal
+    def make_noise 
+        'Woof!'         
+    end 
+end
+class Cat &lt; Animal 
+
+    def make_noise 
+        'Meow!' 
+    end 
+end
+a = Animal.new 
+d = Dog.new
+c = Cat.new
+puts a.make_noise
+puts d.make_noise
+puts c.make_noise
+a.sleep
+d.sleep
+c.sleep
+</pre>
+
+ </div>
+            
+            <div class="row">
+                <div class="pull-right">
+                    <ul class="nav nav-pills">
+                        
+                        <li><a href="/blog/2013/03/24/computer-system/">&laquo;</a></li>
+                        
+                        
+                        <li class="disabled"><a>&raquo;</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <div id="footer"><div class="row">
+    <p> Powered by <a href="http://octopress.org/" target="_blank">Octopress</a>&nbsp;&amp;&nbsp;<a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>, All Rights Shared </p>
+</div>
+<!--
+<a href="https://github.com/zengxunxun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+-->
+
+</div>
+    </div>
+    <script type="text/javascript" src="http://www.bootcss.com/assets/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="http://www.bootcss.com/assets/js/bootstrap.min.js?v2.3.1"></script>
+<script type="text/javascript" src="/js/jquery.animate-shadow-min.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
+<script type="text/javascript" src="/js/jquery.ui.totop.js"></script>
+<script type="text/javascript" src="/js/jquery.tagcanvas.min.js"></script>
+<script type="text/javascript" src="/js/jquery.hoveraccordion.min.js"></script>
+<script type="text/javascript" src="/js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: ssh | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/ssh/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ssh]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/21/ssh-config/"/>
+    <updated>2013-03-21T10:08:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/21/ssh-config</id>
+    <content type="html"><![CDATA[<h5>basic config</h5>
+
+<p><pre class="prettyprint linenums">
+Host *&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+ForwardX11 yes
+LogLevel=quiet 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Host 15&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;User zengxunxun
+Port 22
+HostName 192.168.1.15
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;</pre></p>
+
+<h5>copy public key</h5>
+
+<p><pre class="prettyprint linenums">
+ssh-copy-id
+</pre></p>
+]]></content>
+  </entry>
+  
+</feed>

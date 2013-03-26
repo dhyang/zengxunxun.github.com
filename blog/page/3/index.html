@@ -99,111 +99,50 @@
 
 
 
-<div>Mar 25, 2013</div>
+<div>Mar 15, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/25/ruby/">
+       <a href="/blog/2013/03/15/dbus/">
        
-       Ruby
+       dbus
        </a>
     </h3>
     <div>
-        <h5>Attribute accessors</h5>
-
-<blockquote><p>The attr_reader creates getter methods. The attr_writer method creates setter methods and instance variables for this setters. The attr_accessor method creates both getter, setter methods and their instance variables.</p></blockquote>
+        <p><a href="http://www.freedesktop.org/wiki/Software/dbus">dbus 官网</a></p>
 
 <pre class="prettyprint linenums">
-class Car
-    attr_reader :name, :price
-    attr_writer :name, :price  
-    def to_s
-        "#{@name}: #{@price}"
-    end
-end
-</pre>
-
-
-<pre class="prettyprint linenums">
-class Book
-   attr_accessor :title, :pages    
-end
-b1 = Book.new
-b1.title = "Hidden motives"
-b1.pages = 255
-p "The book #{b1.title} has #{b1.pages} pages"
-</pre>
-
-
-<h5>Class constants</h5>
-
-<pre class="prettyprint linenums">
-class MMath
-    PI = 3.1415
-end
-puts MMath::PI
+&lt;policy context="default"&gt;
+  &lt;!-- Deny everything then punch holes --&gt;
+  &lt;allow send_interface="*"/&gt;
+  &lt;allow receive_interface="*"/&gt;
+  &lt;allow own="*"/&gt;
+  &lt;!-- But allow all users to connect --&gt;
+  &lt;allow user="*"/&gt;
+  &lt;!-- Allow anyone to talk to the message bus --&gt;
+  &lt;allow send_destination="org.freedesktop.DBus"/&gt;
+  &lt;allow receive_sender="org.freedesktop.DBus"/&gt;
+  &lt;!-- valid replies are always allowed --&gt;
+  &lt;allow send_requested_reply="true"/&gt;
+  &lt;allow receive_requested_reply="true"/&gt;
+&lt;/policy&gt; 
 </pre>
 
 
 
-        
-        <a href="/blog/2013/03/25/ruby/">More&#8230;</a>
-    </div>
-    
-    
-</div>
 
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 24, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/24/computer-system/">
-       
-       computer_system
-       </a>
-    </h3>
-    <div>
-        <ol>
-<li>上下文 位、字符、ASCII标准、文本文件、二进制文件
-在不同的上下中同样的字节序列可能表示一个整数、浮点、字符串、机器指令
-数字的机器表示方法</li>
-<li>编译系统 预处理器-编译器-汇编器-链接器 (Relocatable Object Program)</li>
-<li>优化程序性能、理解链接时错误、避免安全漏洞</li>
-<li>硬件组成：总线、I/O设备、主存、处理器</li>
-<li>开销、机械原理</li>
-<li>存储设备形成的层次结构：寄存器、高速缓存、主存、本地磁盘、远程存储</li>
-<li>操作系统管理硬件：硬件被失控的应用程序滥用、向应用程序提供简单一致的机制来控制复杂而又不同的低级硬件设备</li>
-<li>操作系统对一个正在运行的程序的抽象，上下文：跟踪所需的状态信息，多进程：上下文切换进程交错执行</li>
-<li>线程运行在进程的上下文中，共享代码的全局数据</li>
-<li>虚拟存储器，虚拟地址空间</li>
-<li>全局变量、代码数据区、堆、共享库、栈、内核虚拟存储器</li>
-<li>文件： 文件字节序列</li>
-<li>并行： 并发使一个系统运行更快；并发：同时具有多个活动的系统、线程级并发、指令级并行、单指令、多数据并行</li>
-<li>主内存 大的字节数组(虚拟存储器)</li>
-<li>程序数据、指令和控制信息</li>
-<li>字长</li>
-<li>可移植的掩码 ~0</li>
-<li>逻辑运算，对第一个表达式能确定表达式的结果,那么逻辑运算就不会对第二个参数求值</li>
-<li>stdint.h</li>
-<li>强制类型转换与模计算</li>
-</ol>
+<pre class="prettyprint linenums">
+typedef struct DBusObjectPathVTable DBusObjectPathVTable;
+struct DBusObjectPathVTable
+{
+    DBusObjectPathUnregisterFunction unregister_function; 
+    DBusObjectPathMessageFunction message_function; 
+    void (* dbus_internal_pad1) (void *); 
+    void (* dbus_internal_pad2) (void *); 
+    void (* dbus_internal_pad3) (void *); 
+    void (* dbus_internal_pad4) (void *); 
+};
+</pre>
 
 
         
@@ -230,65 +169,31 @@ puts MMath::PI
 
 
 
-<div>Mar 23, 2013</div>
+<div>Mar 15, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/23/ruby/">
+       <a href="/blog/2013/03/15/bash-color/">
        
-       Ruby
+       xterm colors
        </a>
     </h3>
     <div>
-        <ul>
-<li>Abstraction 抽象
-
-<blockquote><p>simplifying complex reality by modeling classes appropriate to the problem</p></blockquote></li>
-<li>Polymorphism 多态
-
-<blockquote><p>process of using an operator or function in different ways for different data input</p></blockquote></li>
-<li>Encapsulation 封装
-
-<blockquote><p>implementation details of a class from other objects</p></blockquote></li>
-<li>Inheritance 继承
-
-<blockquote><p>a way to form new classes using classes that have already been defined</p></blockquote></li>
-</ul>
-
-
-<h5>Objects</h5>
+        <blockquote><p>The small bash script can display the terminal supported color. Use it in vim color plugin</p></blockquote>
 
 <pre class="prettyprint linenums">
-class Being
-end
-b = Being.new
+#!/bin/bash
+for i in {0..255} ; do
+    printf "\x1b[38;5;${i}mcolour${i}\n"
+done
 </pre>
 
 
-<h5>Constructor</h5>
-
-<pre class="prettyprint linenums">
-class Being
-    def initialize(name)
-        puts "Being is create"
-        @name = name
-    end
-
-    def get_name
-        @name
-    end
-end
-b = Being.new("Jobs");
-puts b.get_name();
-
-//the constructor not called
-b2 = Being.allocate 
-</pre>
-
+<blockquote><p><a href="http://www.frexx.de/xterm-256-notes/data/colortable16.sh">More complex one</a></p></blockquote>
 
 
         
-        <a href="/blog/2013/03/23/ruby/">More&#8230;</a>
+        <a href="/blog/2013/03/15/bash-color/">More&#8230;</a>
     </div>
     
     
@@ -311,131 +216,61 @@ b2 = Being.allocate
 
 
 
-<div>Mar 21, 2013</div>
+<div>Mar 14, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/21/ssh-config/">
+       <a href="/blog/2013/03/14/libapr-programming-tutorial/">
        
-       ssh
-       </a>
-    </h3>
-    <div>
-        <h5>basic config</h5>
-
-<pre class="prettyprint linenums">
-Host *
-    StrictHostKeyChecking no
-    UserKnownHostsFile /dev/null
-    ForwardX11 yes
-    LogLevel=quiet 
-
-Host 15
-    User zengxunxun
-    Port 22
-    HostName 192.168.1.15
-</pre>
-
-
-<h5>copy public key</h5>
-
-<pre class="prettyprint linenums">
-ssh-copy-id
-</pre>
-
-
-
-
-        
-        
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 21, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/21/iptable/">
-       
-       Iptables
-       </a>
-    </h3>
-    <div>
-        <h5>iptables basic rules</h5>
-
-<pre class="prettyprint linenums">
-*filter
-:INPUT ACCEPT [0:0]
-:FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [104:10009]
--A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
--A INPUT -p icmp -j ACCEPT
--A INPUT -i lo -j ACCEPT
--A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
--A INPUT -j REJECT --reject-with icmp-host-prohibited
--A FORWARD -j REJECT --reject-with icmp-host-prohibited
-COMMIT
-</pre>
-
-
-
-        
-        <a href="/blog/2013/03/21/iptable/">More&#8230;</a>
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 20, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/20/boot-dot-ini/">
-       
-       boot4win7
+       Libapr Programming Tutorial
        </a>
     </h3>
     <div>
         <pre class="prettyprint linenums">
-[boot loader]
-[operating systems]
-c:\grldr.mbr="Grub4dos"
+#include &lt;libapr/apr_general.h&gt;
+#include &lt;libapr/apr_file_io.h&gt;
+</pre>
+
+
+<blockquote><p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">open</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+apr_status_t 
+apr_file_open(
+    apr_file_t **newf,  //result argument
+    const char *fname,  //file name path
+    apr_int32_t flag,   //open flag
+    apr_fileperms_t perm,  //access permission
+    apr_pool_t *pool   //memory pool to use
+);
+</pre>
+
+
+<blockquote><p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">read</a> / <a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">write</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+apr_status_t apr_file_read(
+    apr_file_t *thefile, 
+    void *buf, 
+    apr_size_t *nbytes  //value-result argument
+);
+</pre>
+
+
+<pre class="prettyprint linenums">
+apr_status_t apr_file_write(
+    apr_file_t *thefile, 
+    void *buf, 
+    apr_size_t *nbytes  //value-result argument
+);
+</pre>
+
+
+<blockquote><p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">close</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+apr_status_t apr_file_close (apr_file_t *file)
+apr_pool_destroy
 </pre>
 
 
@@ -465,49 +300,158 @@ c:\grldr.mbr="Grub4dos"
 
 
 
-<div>Mar 20, 2013</div>
+<div>Mar 14, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/20/openbox/">
+       <a href="/blog/2013/03/14/libapr/">
        
-       Openbox Keybind
+       Apache Portable Runtime Tutorial
        </a>
     </h3>
     <div>
-        <h5>openbox keybind for volume&amp;light control</h5>
+        <ul>
+<li><a href="http://dev.ariel-networks.com/apr/apr-tutorial/html/apr-tutorial.html">Libapr(Apache Portable Runtime) Programming Tutorial</a></li>
+<li><a href="https://apr.apache.org/docs/apr/1.4/">Programmer&#8217;s Manual</a></li>
+<li>In general, objects lifetime control is the most difficult part in programming. Thus, there are many other techniques for it, such as smart pointer, GC(garbage collection) and so on. Note that it is a bit hard to use such techniques at the same time. Since memory pool is one of such techniques, you have to be careful about the mixture.</li>
+<li>Memory Pool (apr_pool_t) <a href="http://dev.ariel-networks.com/apr/apr-tutorial/sample/mp-sample.c">mp-sample.c</a></li>
+</ul>
+
 
 <pre class="prettyprint linenums">
-&lt;keybind key="XF86AudioRaiseVolume"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master 5%+ unmute&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86AudioLowerVolume"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master 5%- unmute&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86AudioMute"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master toggle&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86MonBrightnessUp"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;xbacklight -inc 10%&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86MonBrightnessDown"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;xbacklight -dec 10%&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
+apr_status_t apr_pool_initialize (void);
+void apr_pool_terminate (void):w
+void* apr_pcalloc (apr_pool_t *p, apr_size_t size)
+void apr_pool_destroy (apr_pool_t *p)
 </pre>
 
 
+<ul>
+<li>-D_LARGEFILE64_SOURCE fix <code>error: unknown type name 'off64_t'</code></li>
+</ul>
+
+
+
+        
+        <a href="/blog/2013/03/14/libapr/">More&#8230;</a>
+    </div>
+    
+    
+</div>
+
         
         
+        
+<div class="excerpt">
+    <div class="muted">
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Mar 11, 2013</div>
+</div>
+    <h3>
+       
+       <a href="/blog/2013/03/11/fork-a-daemon-process/">
+       
+       Fork a daemon process
+       </a>
+    </h3>
+    <div>
+        <ul>
+<li>处理信号</li>
+</ul>
+
+
+<div><pre class="prettyprint linenums">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;signal.h&gt;
+#include &lt;unistd.h&gt;
+
+static int keep_going = 1;
+
+static void termination_handler(int signum) 
+{
+    fprintf(stderr,"SIGTERM received! exit!\n");
+    keep_going = 0;
+}
+
+int main()
+{
+    struct sigaction act;
+    act.sa_handler = termination_handler;
+    sigemptyset(&amp;act.sa_mask);
+    sigaction(SIGTERM, &amp;act, NULL);
+    sigaction(SIGUSR1, &amp;act, NULL);
+    fprintf(stderr, "%d\n", getpid());
+    while(keep_going);
+    fprintf(stderr, "exit");    
+    return 0;
+}
+</pre></div>
+
+
+
+        
+        <a href="/blog/2013/03/11/fork-a-daemon-process/">More&#8230;</a>
+    </div>
+    
+    
+</div>
+
+        
+        
+        
+<div class="excerpt">
+    <div class="muted">
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Mar 7, 2013</div>
+</div>
+    <h3>
+       
+       <a href="/blog/2013/03/07/git-pages/">
+       
+       Git Pages
+       </a>
+    </h3>
+    <div>
+        <blockquote><p>创建 <a href="https://github.com/">github pages</a></p></blockquote>
+
+<pre class="prettyprint linenums">
+mkdir demo.github.com
+cd demo.github.com
+touch README.md
+echo "hello world" &gt; index.html
+git init
+git add .
+git commit -a -m "first commit" git remote add origin git@github.com:demo/demo.github.com.git
+git push origin master
+</pre>
+
+
+
+        
+        <a href="/blog/2013/03/07/git-pages/">More&#8230;</a>
     </div>
     
     

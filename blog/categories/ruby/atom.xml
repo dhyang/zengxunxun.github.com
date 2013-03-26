@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/25/ruby/"/>
+    <updated>2013-03-25T22:05:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/25/ruby</id>
+    <content type="html"><![CDATA[<h5>Attribute accessors</h5>
+
+<blockquote><p>The attr_reader creates getter methods. The attr_writer method creates setter methods and instance variables for this setters. The attr_accessor method creates both getter, setter methods and their instance variables.
+<pre class="prettyprint linenums">
+class Car&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;attr_reader :name, :price
+attr_writer :name, :price  
+def to_s
+    "#{@name}: #{@price}"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+</pre>
+<pre class="prettyprint linenums">
+class Book
+   attr_accessor :title, :pages  &lt;br/&gt;
+end
+b1 = Book.new
+b1.title = "Hidden motives"
+b1.pages = 255
+p "The book #{b1.title} has #{b1.pages} pages"
+</pre></p>
+
+<h5>Class constants</h5>
+
+<p><pre class="prettyprint linenums">
+class MMath&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;PI = 3.1415
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+puts MMath::PI
+</pre></p></blockquote>
+
+<!-- more -->
+
+
+<h5>The to_s method</h5>
+
+<blockquote><p>The to_s method belongs to this class.</p></blockquote>
+
+<p><pre class="prettyprint linenums">
+class Being&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def to_s
+    "hello world"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;b = Being.new
+puts b
+</pre></p>
+
+<h5>Operator overloading</h5>
+
+<p><pre class="prettyprint linenums">
+class Being&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;attr_accessor :radius
+
+def initialize r
+    @radius = r
+end
+
+def +(other)
+    Being.new (@radius + other.radius)
+end
+
+def to_s
+    "output #{@radius}"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;a1 = Being.new 1
+a2 = Being.new 2
+puts a1+a2
+</pre></p>
+
+<h5>Class methods</h5>
+
+<blockquote><p>Class methods are called on a class. They cannot be called on an instance of a class.
+<pre class="prettyprint linenums">
+class Being&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def self.info1
+   "This is a Wood class info1" 
+end
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;class &amplt;&amplt; Being 
+    def info2
+       "This is a Brick class info2" 
+    end
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;def Being.info3
+   "This is a Rock class info3"
+end&lt;/p&gt;
+
+&lt;p&gt;puts Being.info1
+puts Being.info2
+puts Being.info3
+</pre></p>
+
+<h5>instance method</h5>
+
+<blockquote><p> Instance methods belong to an instance of an object
+<pre class="prettyprint linenums">
+class Being&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;attr_accessor :info2
+def info1
+    "This is info1 object"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;a = Being.new
+puts a.info1&lt;/p&gt;
+
+&lt;p&gt;b = Being.new
+b.info2 = "This is info2 object"
+puts b.info2&lt;/p&gt;
+
+&lt;p&gt;c = Being.new
+def c.info3&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;"This is info3 object" 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+puts c.info3
+</pre></p>
+
+<h5>Polymorphism</h5>
+
+<p><pre class="prettyprint linenums">
+class Animal&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def make_noise 
+    "Some noise"
+end
+def sleep 
+    puts "#{self.class.name} is sleeping." 
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+class Dog &amplt; Animal&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def make_noise 
+    'Woof!'         
+end 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+class Cat &amplt; Animal&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def make_noise 
+    'Meow!' 
+end 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+a = Animal.new
+d = Dog.new
+c = Cat.new
+puts a.make_noise
+puts d.make_noise
+puts c.make_noise
+a.sleep
+d.sleep
+c.sleep
+</pre></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/23/ruby/"/>
+    <updated>2013-03-23T22:05:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/23/ruby</id>
+    <content type="html"><![CDATA[<ul>
+<li>Abstraction 抽象
+
+<blockquote><p>simplifying complex reality by modeling classes appropriate to the problem</p></blockquote></li>
+<li>Polymorphism 多态
+
+<blockquote><p>process of using an operator or function in different ways for different data input</p></blockquote></li>
+<li>Encapsulation 封装
+
+<blockquote><p>implementation details of a class from other objects</p></blockquote></li>
+<li>Inheritance 继承
+
+<blockquote><p>a way to form new classes using classes that have already been defined</p></blockquote></li>
+</ul>
+
+
+<h5>Objects</h5>
+
+<p><pre class="prettyprint linenums">
+class Being
+end
+b = Being.new
+</pre></p>
+
+<h5>Constructor</h5>
+
+<p><pre class="prettyprint linenums">
+class Being&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def initialize(name)
+    puts "Being is create"
+    @name = name
+end
+
+def get_name
+    @name
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+b = Being.new("Jobs");
+puts b.get_name();&lt;/p&gt;
+
+&lt;p&gt;//the constructor not called
+b2 = Being.allocate
+</pre></p>
+
+<!-- more -->
+
+
+<h5>Constructor overloading</h5>
+
+<p><pre class="prettyprint linenums">
+class Person&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def initialize name="unknown", age=0
+    @name = name
+    @age = age        
+end
+
+def to_s
+    "Name: #{@name}, Age: #{@age}"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+p1 = Person.new
+</pre></p>
+
+<h5>Methods</h5>
+
+<p><pre class="prettyprint linenums">
+class Circle&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;@@PI = 3.141592
+//belong to a class, not to an object
+
+def initialize
+    @radius = 0
+end
+
+def set_radius radius
+    @radius = radius
+end
+
+def area
+    @radius * @radius * @@PI
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;c = Circle.new
+c.set_radius 5
+puts c.area
+</pre></p>
+
+<h5>Access modifiers</h5>
+
+<blockquote><p>Ruby has three access modifiers: public, protected and private.
+All data members are private
+Access modifiers can be used only on methods, default public
+If we call the method inside or outside the class definition.
+If we use or do not use the self keyword which points to the current receiver.
+protected called with the self keyword specified
+<pre class="prettyprint linenums">
+class Some&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;def method1
+    puts "public method1 called"
+end
+
+public
+
+def method2
+    puts "public method2 called"  
+end
+
+def method3
+    puts "public method3 called"
+    method1
+    self.method1
+end          
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;s = Some.new
+s.method3
+</pre></p>
+
+<h5>Inheritance</h5>
+
+<p><pre class="prettyprint linenums">
+class Being&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def initialize
+    puts "Being class created"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;class Human &amplt; Being&lt;/p&gt;
+
+&lt;p&gt;   def initialize&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   super
+   puts "Human class created"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;   end
+end&lt;/p&gt;
+
+&lt;p&gt;Being.new
+Human.new
+a = Drived.new
+puts "\n"
+puts Human.ancestors&lt;/p&gt;
+
+&lt;p&gt;</pre></p>
+
+<h5>The super method</h5>
+
+<p><pre class="prettyprint linenums">&lt;/p&gt;
+
+&lt;p&gt;class Base&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def show x=0, y=0
+    p "Base class, x: #{x}, y: #{y}"
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;class Derived &amplt; Base&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def show x, y
+    super
+    super x
+    super x, y
+    super()
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end&lt;/p&gt;
+
+&lt;p&gt;d = Derived.new
+d.show 3, 3
+</pre></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Strings in Ruby]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/19/ruby/"/>
+    <updated>2013-03-19T21:28:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/19/ruby</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://zetcode.com/lang/rubytutorial/strings/">Strings in Ruby Basic tutorial</a></li>
+<li><a href="http://ruby-doc.org/core-2.0/String.html">Strings Manual</a></li>
+</ul>
+
+
+<h5>Multiline</h5>
+
+<p><pre class="prettyprint linenums">
+puts %/
+Well, I'm sittin' here playing solitaire
+With my pearl-handled deck
+The county won't give me no more methadone
+And they cut off your welfare check/
+</pre></p>
+
+<h5>Concatenating</h5>
+
+<p><pre class="prettyprint linenums">
+lang = "Ruby" + " programming" + " languge"
+lang = "Perl" &amplt;&amplt; " programming" &amplt;&amplt; " language"
+lang = "Java".concat(" programming").concat(" language")
+</pre></p>
+
+<!-- more -->
+
+
+<h5>Freezing</h5>
+
+<blockquote><p>similar <code>const</code> in C,  cannot modify
+<pre class="prettyprint linenums">
+msg.freeze
+</pre></p></blockquote>
+
+<h5>Comparing</h5>
+
+<p><pre class="prettyprint linenums">
+puts "Jane".eql? "Jan"
+puts "Jane".casecmp "Jane"
+</pre></p>
+
+<h5>Objects</h5>
+
+<p><pre class="prettyprint linenums">
+myMsg = String.new "Hello World"
+puts myMsg
+puts myMsg.upcase
+puts myMsg.size
+puts myMsg.reverse
+puts myMsg.include? "hello"
+puts myMsg.empty?
+puts myMsg.downcase
+puts myMsg.capitalize
+puts myMsg.swapcase
+puts myMsg.start_with? "Hello"
+puts myMsg.end_with? "World"
+if ("yes\n".chomp == "yes")&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;puts "yes"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+puts myMsg.lstrip #leading whitespace removed
+puts myMsg.rstrip #trailing whitespace removed.
+puts myMsg.strip
+puts myMsg.scan
+myMsg = "hello|world|"
+kk = myMsg.split(/\|/);
+kk.each do&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;|word|
+puts word.strip 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+</pre></p>
+
+<h5>Formatting</h5>
+
+<blockquote><p>Much like the C <code>prinf</code>
+<pre class="prettyprint linenums">
+puts "%s %d" % ["En taro",12]
+puts "%d" % 300 #decimal
+puts "%x" % 300 #hexadecimal
+puts "%o" % 300 #octal
+puts "%b" % 300 #binary
+puts "%e" % (5/3.0) #scientific&lt;/p&gt;
+
+&lt;h1&gt;# flag adds a prefix to binary, octal and hexadecimal formats.&lt;/h1&gt;
+
+&lt;p&gt;puts "%#x" % 300 #0x
+puts "%#o" % 300 #0
+puts "%#b" % 300 #0b
+</pre></p></blockquote>
+
+<h5>Traverse each char</h5>
+
+<p><pre class="prettyprint linenums">
+msg = "hello world"
+msg.each_char do |c|&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;print "#{c} has ASCII code %d\n" % c.ord    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;end
+</pre></p>
+]]></content>
+  </entry>
+  
+</feed>

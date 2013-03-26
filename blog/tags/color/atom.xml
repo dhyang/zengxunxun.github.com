@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: color | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/color/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[xterm colors]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/15/bash-color/"/>
+    <updated>2013-03-15T14:49:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/15/bash-color</id>
+    <content type="html"><![CDATA[<blockquote><p>The small bash script can display the terminal supported color. Use it in vim color plugin
+<pre class="prettyprint linenums">&lt;/p&gt;
+
+&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+
+&lt;p&gt;for i in {0..255} ; do&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;printf "\x1b[38;5;${i}mcolour${i}\n"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;done
+</pre></p>
+
+<p><a href="http://www.frexx.de/xterm-256-notes/data/colortable16.sh">More complex one</a></p></blockquote>
+
+<!--more-->
+
+
+<p><img src="http://zengxunxun.github.com/downloads/image/xterm_color.png" alt="xerm color" class="img-rounded"/></p>
+]]></content>
+  </entry>
+  
+</feed>

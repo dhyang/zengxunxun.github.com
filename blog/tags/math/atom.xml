@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: Math | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/math/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(三)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript3/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript3</id>
+    <content type="html"><![CDATA[<h5>Math.PI</h5>
+
+<blockquote><p>不解释</p></blockquote>
+
+<h5>abs()</h5>
+
+<blockquote><p>returns the absolute value of the number passed as its parameter.
+<pre class="prettyprint linenums">
+var myNumber = -101;
+document.write(Math.abs(myNumber));
+</pre></p></blockquote>
+
+<h5>ceil()</h5>
+
+<blockquote><p>rounds a number up to the next largest whole number or integer.
+<pre class="prettyprint linenums">
+var myNumber = 101.01;
+document.write(Math.ceil(myNumber) + "&lt;br/&gt;");
+document.write(parseInt(myNumber));
+</pre></p></blockquote>
+
+<!-- more -->
+
+
+<h5>floor()</h5>
+
+<blockquote><p>removes any numbers after the decimal point.</p></blockquote>
+
+<h5>round()</h5>
+
+<blockquote><p>rounds up only if the decimal part is .5 or greater, and rounds down otherwise.</p></blockquote>
+
+<h5>random()</h5>
+
+<blockquote><p>returns a random floating-point number in the range between 0 and 1</p></blockquote>
+
+<h5>pow()</h5>
+
+<blockquote><p>pow(2,8) equal to 2<sup>8</sup></p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

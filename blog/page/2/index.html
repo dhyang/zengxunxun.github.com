@@ -99,196 +99,45 @@
 
 
 
-<div>Mar 25, 2013</div>
+<div>Mar 19, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/25/ruby/">
+       <a href="/blog/2013/03/19/ruby/">
        
-       Ruby
-       </a>
-    </h3>
-    <div>
-        <h5>Attribute accessors</h5>
-
-<blockquote><p>The attr_reader creates getter methods. The attr_writer method creates setter methods and instance variables for this setters. The attr_accessor method creates both getter, setter methods and their instance variables.</p></blockquote>
-
-<pre class="prettyprint linenums">
-class Car
-    attr_reader :name, :price
-    attr_writer :name, :price  
-    def to_s
-        "#{@name}: #{@price}"
-    end
-end
-</pre>
-
-
-<pre class="prettyprint linenums">
-class Book
-   attr_accessor :title, :pages    
-end
-b1 = Book.new
-b1.title = "Hidden motives"
-b1.pages = 255
-p "The book #{b1.title} has #{b1.pages} pages"
-</pre>
-
-
-<h5>Class constants</h5>
-
-<pre class="prettyprint linenums">
-class MMath
-    PI = 3.1415
-end
-puts MMath::PI
-</pre>
-
-
-
-        
-        <a href="/blog/2013/03/25/ruby/">More&#8230;</a>
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 24, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/24/computer-system/">
-       
-       computer_system
-       </a>
-    </h3>
-    <div>
-        <ol>
-<li>上下文 位、字符、ASCII标准、文本文件、二进制文件
-在不同的上下中同样的字节序列可能表示一个整数、浮点、字符串、机器指令
-数字的机器表示方法</li>
-<li>编译系统 预处理器-编译器-汇编器-链接器 (Relocatable Object Program)</li>
-<li>优化程序性能、理解链接时错误、避免安全漏洞</li>
-<li>硬件组成：总线、I/O设备、主存、处理器</li>
-<li>开销、机械原理</li>
-<li>存储设备形成的层次结构：寄存器、高速缓存、主存、本地磁盘、远程存储</li>
-<li>操作系统管理硬件：硬件被失控的应用程序滥用、向应用程序提供简单一致的机制来控制复杂而又不同的低级硬件设备</li>
-<li>操作系统对一个正在运行的程序的抽象，上下文：跟踪所需的状态信息，多进程：上下文切换进程交错执行</li>
-<li>线程运行在进程的上下文中，共享代码的全局数据</li>
-<li>虚拟存储器，虚拟地址空间</li>
-<li>全局变量、代码数据区、堆、共享库、栈、内核虚拟存储器</li>
-<li>文件： 文件字节序列</li>
-<li>并行： 并发使一个系统运行更快；并发：同时具有多个活动的系统、线程级并发、指令级并行、单指令、多数据并行</li>
-<li>主内存 大的字节数组(虚拟存储器)</li>
-<li>程序数据、指令和控制信息</li>
-<li>字长</li>
-<li>可移植的掩码 ~0</li>
-<li>逻辑运算，对第一个表达式能确定表达式的结果,那么逻辑运算就不会对第二个参数求值</li>
-<li>stdint.h</li>
-<li>强制类型转换与模计算</li>
-</ol>
-
-
-        
-        
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 23, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/23/ruby/">
-       
-       Ruby
+       Strings in Ruby
        </a>
     </h3>
     <div>
         <ul>
-<li>Abstraction 抽象
-
-<blockquote><p>simplifying complex reality by modeling classes appropriate to the problem</p></blockquote></li>
-<li>Polymorphism 多态
-
-<blockquote><p>process of using an operator or function in different ways for different data input</p></blockquote></li>
-<li>Encapsulation 封装
-
-<blockquote><p>implementation details of a class from other objects</p></blockquote></li>
-<li>Inheritance 继承
-
-<blockquote><p>a way to form new classes using classes that have already been defined</p></blockquote></li>
+<li><a href="http://zetcode.com/lang/rubytutorial/strings/">Strings in Ruby Basic tutorial</a></li>
+<li><a href="http://ruby-doc.org/core-2.0/String.html">Strings Manual</a></li>
 </ul>
 
 
-<h5>Objects</h5>
+<h5>Multiline</h5>
 
 <pre class="prettyprint linenums">
-class Being
-end
-b = Being.new
+puts %/
+Well, I'm sittin' here playing solitaire
+With my pearl-handled deck 
+The county won't give me no more methadone 
+And they cut off your welfare check/
 </pre>
 
 
-<h5>Constructor</h5>
+<h5>Concatenating</h5>
 
 <pre class="prettyprint linenums">
-class Being
-    def initialize(name)
-        puts "Being is create"
-        @name = name
-    end
-
-    def get_name
-        @name
-    end
-end
-b = Being.new("Jobs");
-puts b.get_name();
-
-//the constructor not called
-b2 = Being.allocate 
+lang = "Ruby" + " programming" + " languge"
+lang = "Perl" &lt;&lt; " programming" &lt;&lt; " language"
+lang = "Java".concat(" programming").concat(" language")
 </pre>
 
 
 
         
-        <a href="/blog/2013/03/23/ruby/">More&#8230;</a>
+        <a href="/blog/2013/03/19/ruby/">More&#8230;</a>
     </div>
     
     
@@ -311,43 +160,53 @@ b2 = Being.allocate
 
 
 
-<div>Mar 21, 2013</div>
+<div>Mar 19, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/21/ssh-config/">
+       <a href="/blog/2013/03/19/javascript3/">
        
-       ssh
+       Beginning JavaScript(四)
        </a>
     </h3>
     <div>
-        <h5>basic config</h5>
+        <ul>
+<li><h5>RegExp attributes</h5>
 
-<pre class="prettyprint linenums">
-Host *
-    StrictHostKeyChecking no
-    UserKnownHostsFile /dev/null
-    ForwardX11 yes
-    LogLevel=quiet 
-
-Host 15
-    User zengxunxun
-    Port 22
-    HostName 192.168.1.15
-</pre>
+<blockquote><p>By default, the RegExp object looks only for the first matching pattern.</p></blockquote></li>
+</ul>
 
 
-<h5>copy public key</h5>
+<table class="table table-hover">
+<tbody>
+<tr>
+<th>Attribute Character</th>
+<th>Description</th>
+<th></th>
+</tr>
+<tr>
+<td>G</td>
+<td>Global match</td>
+<td></td>
+</tr>
+<tr>
+<td>I</td>
+<td>Pattern is case-insensitive</td>
+<td></td>
+</tr>
+<tr>
+<td>M</td>
+<td>Multi-line flag</td>
+</tr>
+</tbody>
+</table>
 
-<pre class="prettyprint linenums">
-ssh-copy-id
-</pre>
 
 
 
 
         
-        
+        <a href="/blog/2013/03/19/javascript3/">More&#8230;</a>
     </div>
     
     
@@ -370,75 +229,32 @@ ssh-copy-id
 
 
 
-<div>Mar 21, 2013</div>
+<div>Mar 19, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/21/iptable/">
+       <a href="/blog/2013/03/19/tmux-startup-script/">
        
-       Iptables
+       tmux startup script
        </a>
     </h3>
     <div>
-        <h5>iptables basic rules</h5>
+        <h5>Create session if none exists, otherwise attach</h5>
 
 <pre class="prettyprint linenums">
-*filter
-:INPUT ACCEPT [0:0]
-:FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [104:10009]
--A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
--A INPUT -p icmp -j ACCEPT
--A INPUT -i lo -j ACCEPT
--A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
--A INPUT -j REJECT --reject-with icmp-host-prohibited
--A FORWARD -j REJECT --reject-with icmp-host-prohibited
-COMMIT
+#!/bin/bash
+if [ ! $# -eq 1 ];then
+    exit -1
+fi
+session="session.$1"
+tmux has-session -t "$session" 2&gt;/dev/null
+if [ $? -eq 0 ];then
+    tmux attach -t "$session"
+else
+    tmux new-session -s "$session"
+fi
+exit 0
 </pre>
-
-
-
-        
-        <a href="/blog/2013/03/21/iptable/">More&#8230;</a>
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 20, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/20/boot-dot-ini/">
-       
-       boot4win7
-       </a>
-    </h3>
-    <div>
-        <pre class="prettyprint linenums">
-[boot loader]
-[operating systems]
-c:\grldr.mbr="Grub4dos"
-</pre>
-
-
 
 
         
@@ -465,45 +281,248 @@ c:\grldr.mbr="Grub4dos"
 
 
 
-<div>Mar 20, 2013</div>
+<div>Mar 17, 2013</div>
 </div>
     <h3>
        
-       <a href="/blog/2013/03/20/openbox/">
+       <a href="/blog/2013/03/17/javascript3/">
        
-       Openbox Keybind
+       Beginning JavaScript(三)
        </a>
     </h3>
     <div>
-        <h5>openbox keybind for volume&amp;light control</h5>
+        <h5>Math.PI</h5>
+
+<blockquote><p>不解释</p></blockquote>
+
+<h5>abs()</h5>
+
+<blockquote><p>returns the absolute value of the number passed as its parameter.</p></blockquote>
 
 <pre class="prettyprint linenums">
-&lt;keybind key="XF86AudioRaiseVolume"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master 5%+ unmute&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86AudioLowerVolume"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master 5%- unmute&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86AudioMute"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master toggle&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86MonBrightnessUp"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;xbacklight -inc 10%&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86MonBrightnessDown"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;xbacklight -dec 10%&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
+var myNumber = -101;
+document.write(Math.abs(myNumber));
 </pre>
+
+
+<h5>ceil()</h5>
+
+<blockquote><p>rounds a number up to the next largest whole number or integer.</p></blockquote>
+
+<pre class="prettyprint linenums">
+var myNumber = 101.01;
+document.write(Math.ceil(myNumber) + "&lt;br/&gt;");
+document.write(parseInt(myNumber));
+</pre>
+
+
+
+        
+        <a href="/blog/2013/03/17/javascript3/">More&#8230;</a>
+    </div>
+    
+    
+</div>
+
+        
+        
+        
+<div class="excerpt">
+    <div class="muted">
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Mar 17, 2013</div>
+</div>
+    <h3>
+       
+       <a href="/blog/2013/03/17/javascript-oop/">
+       
+       Beginning JavaScript(二)
+       </a>
+    </h3>
+    <div>
+        <ul>
+<li>A constructor</li>
+<li>Method definitions</li>
+<li>Properties</li>
+</ul>
+
+
+<h5>4 ways to define a JavaScript class</h5>
+
+
+        
+        <a href="/blog/2013/03/17/javascript-oop/">More&#8230;</a>
+    </div>
+    
+    
+</div>
+
+        
+        
+        
+<div class="excerpt">
+    <div class="muted">
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Mar 17, 2013</div>
+</div>
+    <h3>
+       
+       <a href="/blog/2013/03/17/javascript/">
+       
+       Beginning JavaScript(一)
+       </a>
+    </h3>
+    <div>
+        <h5>length</h5>
+
+<blockquote><p> The length of the string in characters</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+document.write(msg.length);
+</pre>
+
+
+<h5>indexOf() and lastIndexOf()</h5>
+
+<blockquote><p>The methods that allow you to search a string for the existence of another string and that return the character position of the string if found</p></blockquote>
+
+<pre class="prettyprint linenums">
+var msg = new String("hello world");
+position = msg.indexOf("world");
+document.write(position);
+</pre>
+
+
+<pre class="prettyprint linenums">
+var msg = "Hello Jeremy. How are you Jeremy";
+position = msg.lastIndexOf("Jeremy");
+document.write(position);
+</pre>
+
+
+
+        
+        <a href="/blog/2013/03/17/javascript/">More&#8230;</a>
+    </div>
+    
+    
+</div>
+
+        
+        
+        
+<div class="excerpt">
+    <div class="muted">
+
+
+
+
+
+
+
+
+
+
+
+
+<div>Mar 15, 2013</div>
+</div>
+    <h3>
+       
+       <a href="/blog/2013/03/15/queue-dot-h/">
+       
+       queue.c
+       </a>
+    </h3>
+    <div>
+        <div><pre class="prettyprint linenums">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;sys/queue.h&gt;
+
+/*
+ * LIST_HEAD(name, type)
+ * LIST_HEAD_INITIALIZER(head)
+ * LIST_ENTRY(type)
+ * LIST_INIT(head)
+ * LIST_INSERT_AFTER(listelm, elm, field)
+ * LIST_INSERT_BEFORE(listelm, elm, field)
+ * LIST_INSERT_HEAD(head, elm, field)
+ * LIST_REMOVE(elm, field)
+ * LIST_FOREACH(var, head, field)
+ * LIST_EMPTY(head)
+ * LIST_FIRST(head)
+ * LIST_NEXT(elm, field)
+ * */
+
+LIST_HEAD(personHead, person) head;
+
+#define SIZE_PERSON sizeof(struct person)
+
+typedef struct person{
+    char *name;
+    int age;
+    LIST_ENTRY(person) entries;
+}persNode, *perNodePtr;
+
+perNodePtr foo_struct(perNodePtr p, char *name, int age)
+{
+    p = (perNodePtr)malloc(SIZE_PERSON);
+    p-&gt;name = name;
+    p-&gt;age = age;
+    return p;
+}
+
+int main()
+{
+    LIST_INIT(&amp;head);
+    perNodePtr p1 = NULL;
+    p1 = foo_struct(p1, "Jim", 12);
+    LIST_INSERT_HEAD(&amp;head, p1, entries);
+
+    perNodePtr p2 = NULL;
+    p2 = foo_struct(p2, "Tom", 33);
+    LIST_INSERT_AFTER(p1, p2, entries);
+
+    perNodePtr p3 = NULL;
+    p3 = foo_struct(p2, "Jerry", 21);
+    LIST_INSERT_AFTER(p1, p3, entries);
+
+    perNodePtr p;
+    while(NULL != (p = LIST_FIRST(&amp;head))) {
+        LIST_REMOVE(p, entries);
+        free(p);
+    }
+
+    LIST_FOREACH(p, &amp;head, entries) {
+        printf("%s\n%d\n", p-&gt;name, p-&gt;age);
+    }
+    return 0;
+}
+</pre></div>
 
 
         

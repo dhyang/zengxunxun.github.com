@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>zengxx'notes</title>
+    <title>computer_system - zengxx'notes</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="author" content="zengxunxun" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -81,106 +81,26 @@
 </div>
         <div id="content"><div class="row">
     <div class="offset3 span6">
-        
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
+        <div class="article">
+            <div class="fit-height">
+                <div>
+                    <h3>
+                        <span class="color1">
+                            computer_system
+                        </span>
+                        
+                        <small>computer_system</small>
+                        
+                    </h3>
+                    <div>
+                    <span class="badge">2013-03-24</span>
+                    <span class="pull-right">
 
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 25, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/25/ruby/">
-       
-       Ruby
-       </a>
-    </h3>
-    <div>
-        <h5>Attribute accessors</h5>
-
-<blockquote><p>The attr_reader creates getter methods. The attr_writer method creates setter methods and instance variables for this setters. The attr_accessor method creates both getter, setter methods and their instance variables.</p></blockquote>
-
-<pre class="prettyprint linenums">
-class Car
-    attr_reader :name, :price
-    attr_writer :name, :price  
-    def to_s
-        "#{@name}: #{@price}"
-    end
-end
-</pre>
-
-
-<pre class="prettyprint linenums">
-class Book
-   attr_accessor :title, :pages    
-end
-b1 = Book.new
-b1.title = "Hidden motives"
-b1.pages = 255
-p "The book #{b1.title} has #{b1.pages} pages"
-</pre>
-
-
-<h5>Class constants</h5>
-
-<pre class="prettyprint linenums">
-class MMath
-    PI = 3.1415
-end
-puts MMath::PI
-</pre>
-
-
-
-        
-        <a href="/blog/2013/03/25/ruby/">More&#8230;</a>
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 24, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/24/computer-system/">
-       
-       computer_system
-       </a>
-    </h3>
-    <div>
-        <ol>
+</span>
+                    </div>
+                </div>
+            </div>
+            <div> <ol>
 <li>上下文 位、字符、ASCII标准、文本文件、二进制文件
 在不同的上下中同样的字节序列可能表示一个整数、浮点、字符串、机器指令
 数字的机器表示方法</li>
@@ -205,317 +125,24 @@ puts MMath::PI
 <li>强制类型转换与模计算</li>
 </ol>
 
-
-        
-        
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 23, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/23/ruby/">
-       
-       Ruby
-       </a>
-    </h3>
-    <div>
-        <ul>
-<li>Abstraction 抽象
-
-<blockquote><p>simplifying complex reality by modeling classes appropriate to the problem</p></blockquote></li>
-<li>Polymorphism 多态
-
-<blockquote><p>process of using an operator or function in different ways for different data input</p></blockquote></li>
-<li>Encapsulation 封装
-
-<blockquote><p>implementation details of a class from other objects</p></blockquote></li>
-<li>Inheritance 继承
-
-<blockquote><p>a way to form new classes using classes that have already been defined</p></blockquote></li>
-</ul>
-
-
-<h5>Objects</h5>
-
-<pre class="prettyprint linenums">
-class Being
-end
-b = Being.new
-</pre>
-
-
-<h5>Constructor</h5>
-
-<pre class="prettyprint linenums">
-class Being
-    def initialize(name)
-        puts "Being is create"
-        @name = name
-    end
-
-    def get_name
-        @name
-    end
-end
-b = Being.new("Jobs");
-puts b.get_name();
-
-//the constructor not called
-b2 = Being.allocate 
-</pre>
-
-
-
-        
-        <a href="/blog/2013/03/23/ruby/">More&#8230;</a>
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 21, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/21/ssh-config/">
-       
-       ssh
-       </a>
-    </h3>
-    <div>
-        <h5>basic config</h5>
-
-<pre class="prettyprint linenums">
-Host *
-    StrictHostKeyChecking no
-    UserKnownHostsFile /dev/null
-    ForwardX11 yes
-    LogLevel=quiet 
-
-Host 15
-    User zengxunxun
-    Port 22
-    HostName 192.168.1.15
-</pre>
-
-
-<h5>copy public key</h5>
-
-<pre class="prettyprint linenums">
-ssh-copy-id
-</pre>
-
-
-
-
-        
-        
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 21, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/21/iptable/">
-       
-       Iptables
-       </a>
-    </h3>
-    <div>
-        <h5>iptables basic rules</h5>
-
-<pre class="prettyprint linenums">
-*filter
-:INPUT ACCEPT [0:0]
-:FORWARD ACCEPT [0:0]
-:OUTPUT ACCEPT [104:10009]
--A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
--A INPUT -p icmp -j ACCEPT
--A INPUT -i lo -j ACCEPT
--A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
--A INPUT -j REJECT --reject-with icmp-host-prohibited
--A FORWARD -j REJECT --reject-with icmp-host-prohibited
-COMMIT
-</pre>
-
-
-
-        
-        <a href="/blog/2013/03/21/iptable/">More&#8230;</a>
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 20, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/20/boot-dot-ini/">
-       
-       boot4win7
-       </a>
-    </h3>
-    <div>
-        <pre class="prettyprint linenums">
-[boot loader]
-[operating systems]
-c:\grldr.mbr="Grub4dos"
-</pre>
-
-
-
-
-        
-        
-    </div>
-    
-    
-</div>
-
-        
-        
-        
-<div class="excerpt">
-    <div class="muted">
-
-
-
-
-
-
-
-
-
-
-
-
-<div>Mar 20, 2013</div>
-</div>
-    <h3>
-       
-       <a href="/blog/2013/03/20/openbox/">
-       
-       Openbox Keybind
-       </a>
-    </h3>
-    <div>
-        <h5>openbox keybind for volume&amp;light control</h5>
-
-<pre class="prettyprint linenums">
-&lt;keybind key="XF86AudioRaiseVolume"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master 5%+ unmute&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86AudioLowerVolume"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master 5%- unmute&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86AudioMute"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;amixer set Master toggle&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86MonBrightnessUp"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;xbacklight -inc 10%&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-&lt;keybind key="XF86MonBrightnessDown"&gt;
-  &lt;action name="Execute"&gt;
-    &lt;command&gt;xbacklight -dec 10%&lt;/command&gt;
-  &lt;/action&gt;
-&lt;/keybind&gt;
-</pre>
-
-
-        
-        
-    </div>
-    
-    
-</div>
-
-        
+ </div>
+            
+            <div class="row">
+                <div class="pull-right">
+                    <ul class="nav nav-pills">
+                        
+                        <li><a href="/blog/2013/03/23/ruby/">&laquo;</a></li>
+                        
+                        
+                        <li><a href="/blog/2013/03/25/ruby/">&raquo;</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 </div>
         <div id="footer"><div class="row">
     <p> Powered by <a href="http://octopress.org/" target="_blank">Octopress</a>&nbsp;&amp;&nbsp;<a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>, All Rights Shared </p>

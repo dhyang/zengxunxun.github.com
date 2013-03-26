@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: libapr | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/libapr/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Libapr Programming Tutorial]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/14/libapr-programming-tutorial/"/>
+    <updated>2013-03-14T21:49:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/14/libapr-programming-tutorial</id>
+    <content type="html"><![CDATA[<p><pre class="prettyprint linenums">&lt;/p&gt;
+
+&lt;h1&gt;include &amplt;libapr/apr_general.h&gt;&lt;/h1&gt;
+
+&lt;h1&gt;include &amplt;libapr/apr_file_io.h&gt;&lt;/h1&gt;
+
+&lt;p&gt;</pre></p>
+
+<blockquote><p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">open</a>
+<pre class="prettyprint linenums">
+apr_status_t
+apr_file_open(&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apr_file_t **newf,  //result argument
+const char *fname,  //file name path
+apr_int32_t flag,   //open flag
+apr_fileperms_t perm,  //access permission
+apr_pool_t *pool   //memory pool to use
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;);
+</pre></p>
+
+<p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">read</a> / <a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">write</a>
+<pre class="prettyprint linenums">
+apr_status_t apr_file_read(&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apr_file_t *thefile, 
+void *buf, 
+apr_size_t *nbytes  //value-result argument
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;);
+</pre>
+<pre class="prettyprint linenums">
+apr_status_t apr_file_write(&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;apr_file_t *thefile, 
+void *buf, 
+apr_size_t *nbytes  //value-result argument
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;);
+</pre></p>
+
+<p><a href="https://apr.apache.org/docs/apr/1.4/group__apr__file__io.html">close</a>
+<pre class="prettyprint linenums">
+apr_status_t apr_file_close (apr_file_t *file)
+apr_pool_destroy
+</pre></p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Apache Portable Runtime Tutorial]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/14/libapr/"/>
+    <updated>2013-03-14T14:44:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/14/libapr</id>
+    <content type="html"><![CDATA[<ul>
+<li><a href="http://dev.ariel-networks.com/apr/apr-tutorial/html/apr-tutorial.html">Libapr(Apache Portable Runtime) Programming Tutorial</a></li>
+<li><a href="https://apr.apache.org/docs/apr/1.4/">Programmer's Manual</a></li>
+<li>In general, objects lifetime control is the most difficult part in programming. Thus, there are many other techniques for it, such as smart pointer, GC(garbage collection) and so on. Note that it is a bit hard to use such techniques at the same time. Since memory pool is one of such techniques, you have to be careful about the mixture.</li>
+<li>Memory Pool (apr_pool_t) <a href="http://dev.ariel-networks.com/apr/apr-tutorial/sample/mp-sample.c">mp-sample.c</a>
+<pre class="prettyprint linenums">
+apr_status_t apr_pool_initialize (void);
+void apr_pool_terminate (void):w
+void&lt;em&gt; apr_pcalloc (apr_pool_t &lt;/em&gt;p, apr_size_t size)
+void apr_pool_destroy (apr_pool_t *p)
+</pre></li>
+<li>-D_LARGEFILE64_SOURCE fix <code>error: unknown type name 'off64_t'</code></li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>file handling <a href="http://dev.ariel-networks.com/apr/apr-tutorial/html/apr-tutorial-5.html">file handling</a>
+<pre class="prettyprint linenums">
+apr_file_open
+</pre></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: tmux | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/tmux/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[tmux startup script]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/19/tmux-startup-script/"/>
+    <updated>2013-03-19T18:33:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/19/tmux-startup-script</id>
+    <content type="html"><![CDATA[<h5>Create session if none exists, otherwise attach</h5>
+
+<p><pre class="prettyprint linenums">&lt;/p&gt;
+
+&lt;h1&gt;!/bin/bash&lt;/h1&gt;
+
+&lt;p&gt;if [ ! $# -eq 1 ];then&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;exit -1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;fi
+session="session.$1"
+tmux has-session -t "$session" 2&gt;/dev/null
+if [ $? -eq 0 ];then&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux attach -t "$session"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;else&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tmux new-session -s "$session"
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;fi
+exit 0
+</pre></p>
+]]></content>
+  </entry>
+  
+</feed>

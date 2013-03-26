@@ -1,0 +1,178 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Apache Portable Runtime Tutorial - zengxx'notes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="zengxunxun" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript">
+        if(navigator.userAgent.indexOf("MSIE") != -1) {
+            var version = navigator.userAgent.match(/MSIE ([\d.]+)/)[1];
+            if(Math.round(version) < 9) {
+                document.write("Not support IE " + Math.round(version) + ", Please change your browser.<br/><br/>");
+                document.write("不支持 IE" + Math.round(version) + ", 请更换浏览器.");
+                window.stop ? window.stop() : document.execCommand("Stop");
+            }
+        }
+    </script>
+    <link rel="shortcut icon" href="/atom.xml" />
+	<link rel="alternate" href="/atom.xml" title="zengxx'notes" type="application/atom+xml">
+    <link rel="stylesheet" href="//www.bootcss.com/assets/css/bootstrap.min.css?v2.3.1" type="text/css"/>
+    <link rel="stylesheet" href="//www.bootcss.com/assets/css/bootstrap-responsive.min.css?v2.3.1" type="text/css"/>
+    <link rel="stylesheet" href="//www.bootcss.com/assets/js/google-code-prettify/prettify.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/ui.totop.css" type="text/css" />
+    <link rel="stylesheet" href="/css/docs.css" type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header"><div class="row">
+    <div class="offset2 span8">
+        <p class="opensans huge fit-height">zengxx's notes</p>
+        <blockquote>
+            <p class="opensans large muted">Sweet mother of monkey milk, a gold coin!</p>
+        </blockquote>
+    </div>
+</div>
+</div>
+        <div id="navigator"><div class="row">
+    <div class="offset2 span8">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <!--
+                    <li><a href="/blog/archives">Archives</a></li>
+                    -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret">&nbsp;</b></a> 
+                        <ul class="dropdown-menu">
+                            <li><a href='/blog/categories/c'>C</a></li>
+<li><a href='/blog/categories/javascript'>JavaScript</a></li>
+<li><a href='/blog/categories/linux'>Linux</a></li>
+<li><a href='/blog/categories/note'>note</a></li>
+<li><a href='/blog/categories/octopress'>Octopress</a></li>
+<li><a href='/blog/categories/other'>other</a></li>
+<li><a href='/blog/categories/ruby'>Ruby</a></li>
+<li><a href='/blog/categories/shell'>Shell</a></li>
+ 
+                            <li class="divider"></li>
+                            <li class="nav-header">All(20)</li>
+                        </ul>
+                    </li>
+                    <li><a href="/blog/tags" id="tags">Tags</a></li>
+                    <!--
+                    <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+                    -->
+                    <li><a href="/blog/bookmarks">BookMarks</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li><a href="/blog/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <div id="content"><div class="row">
+    <div class="offset3 span6">
+        <div class="article">
+            <div class="fit-height">
+                <div>
+                    <h3>
+                        <span class="color1">
+                            Apache Portable Runtime Tutorial
+                        </span>
+                        
+                        <small>笔记</small>
+                        
+                    </h3>
+                    <div>
+                    <span class="badge">2013-03-14</span>
+                    <span class="pull-right">
+
+
+    <span class="label label-info"><a href='/blog/tags/c/'>C</a></span>&nbsp;<span class="label label-info"><a href='/blog/tags/libapr/'>libapr</a></span>&nbsp;<span class="label label-info"><a href='/blog/tags/tutorial/'>tutorial</a></span>
+
+
+</span>
+                    </div>
+                </div>
+            </div>
+            <div> <ul>
+<li><a href="http://dev.ariel-networks.com/apr/apr-tutorial/html/apr-tutorial.html">Libapr(Apache Portable Runtime) Programming Tutorial</a></li>
+<li><a href="https://apr.apache.org/docs/apr/1.4/">Programmer&#8217;s Manual</a></li>
+<li>In general, objects lifetime control is the most difficult part in programming. Thus, there are many other techniques for it, such as smart pointer, GC(garbage collection) and so on. Note that it is a bit hard to use such techniques at the same time. Since memory pool is one of such techniques, you have to be careful about the mixture.</li>
+<li>Memory Pool (apr_pool_t) <a href="http://dev.ariel-networks.com/apr/apr-tutorial/sample/mp-sample.c">mp-sample.c</a></li>
+</ul>
+
+
+<pre class="prettyprint linenums">
+apr_status_t apr_pool_initialize (void);
+void apr_pool_terminate (void):w
+void* apr_pcalloc (apr_pool_t *p, apr_size_t size)
+void apr_pool_destroy (apr_pool_t *p)
+</pre>
+
+
+<ul>
+<li>-D_LARGEFILE64_SOURCE fix <code>error: unknown type name 'off64_t'</code></li>
+</ul>
+
+
+<!--more-->
+
+
+<ul>
+<li>file handling <a href="http://dev.ariel-networks.com/apr/apr-tutorial/html/apr-tutorial-5.html">file handling</a></li>
+</ul>
+
+
+<pre class="prettyprint linenums">
+apr_file_open
+</pre>
+
+ </div>
+            
+            <div class="row">
+                <div class="pull-right">
+                    <ul class="nav nav-pills">
+                        
+                        <li><a href="/blog/2013/03/11/fork-a-daemon-process/">&laquo;</a></li>
+                        
+                        
+                        <li><a href="/blog/2013/03/14/libapr-programming-tutorial/">&raquo;</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+        <div id="footer"><div class="row">
+    <p> Powered by <a href="http://octopress.org/" target="_blank">Octopress</a>&nbsp;&amp;&nbsp;<a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap</a>, All Rights Shared </p>
+</div>
+<!--
+<a href="https://github.com/zengxunxun"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+-->
+
+</div>
+    </div>
+    <script type="text/javascript" src="http://www.bootcss.com/assets/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="http://www.bootcss.com/assets/js/bootstrap.min.js?v2.3.1"></script>
+<script type="text/javascript" src="/js/jquery.animate-shadow-min.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
+<script type="text/javascript" src="/js/jquery.ui.totop.js"></script>
+<script type="text/javascript" src="/js/jquery.tagcanvas.min.js"></script>
+<script type="text/javascript" src="/js/jquery.hoveraccordion.min.js"></script>
+<script type="text/javascript" src="/js/docs.js"></script>
+
+</body>
+</html>

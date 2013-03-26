@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: Object | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/tags/object/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Beginning JavaScript(二)]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/17/javascript-oop/"/>
+    <updated>2013-03-17T11:40:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/17/javascript-oop</id>
+    <content type="html"><![CDATA[<ul>
+<li>A constructor</li>
+<li>Method definitions</li>
+<li>Properties</li>
+</ul>
+
+
+<h5>4 ways to define a JavaScript class</h5>
+
+<!--more-->
+
+
+<p><pre class="prettyprint linenums">
+// Method 1
+function customerBooking1(bookId, customName) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.bookId = bookId;
+this.customName = customName;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+customerBooking1.prototype.getInfo = function() {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;document.write(this.bookId + "&amplt;br/&ampgt;");
+document.write(this.customName + "&amplt;br/&ampgt;");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+var firstbook = new customerBooking1(1234, "Hello world");
+firstbook.getInfo();
+//Method 2
+function customerBooking2(bookId, customName) {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.bookId = bookId;
+this.customName = customName;
+this.getInfo = function(){
+    document.write(this.bookId + "&amplt;br/&ampgt;");
+    document.write(this.customName + "&amplt;br/&ampgt;");
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+var firstbook = new customerBooking2(1234, "Hello world");
+firstbook.getInfo();
+//Method3
+var customerBooking3  = function(bookId, customName){&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.bookId = bookId;
+this.customName = customName;
+this.getInfo = function(){
+    document.write(this.bookId + "&amplt;br/&ampgt;");
+    document.write(this.customName + "&amplt;br/&ampgt;");
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+var firstbook = new customerBooking3(1234, "Hello world");
+firstbook.getInfo();
+//Method4
+var customerBooking4 = {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;init: function(bookId, customName) {
+    this.bookId = bookId;
+    this.customName = customName;
+},
+getInfo: function() {
+    document.write(this.bookId + "&amplt;br/&ampgt;");
+    document.write(this.customName + "&amplt;br/&ampgt;");
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+customerBooking4.init(1234, "hello world");
+customerBooking4.getInfo();
+</pre></p>
+]]></content>
+  </entry>
+  
+</feed>

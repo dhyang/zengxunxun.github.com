@@ -1,0 +1,150 @@
+body {
+    background-image: url("../img/bg.png");
+    font-family: "Helvetica Neue", Helvetica, Arial, 微软雅黑, 宋体, sans-serif;
+    overflow-y: scroll;
+}
+
+.opensans {
+    font-family: "Open Sans", sans-serif;
+}
+
+.fit-width {
+    margin-right: 12px;
+}
+
+.fit-height {
+    margin: 24px 0;
+}
+
+.fit-roof {
+    margin-top: 12px;
+}
+
+.color1 {
+    color: #5A5A5A;
+}
+
+
+.indentation{
+    text-indent: 32px;
+}
+
+.pull-center{
+    text-align: center;
+}
+
+.huge {
+    font-size: 48px;
+}
+
+.larger {
+    font-size: 32px;
+}
+
+.large {
+    font-size: 24px;
+}
+
+.normal {
+    font-size: 16px;
+}
+
+#header {
+    margin: 32px 0;
+}
+
+#content {
+    margin-bottom: 32px;
+}
+
+
+#navigator {
+    margin:0 auto;
+    float:none;
+}
+
+#footer {
+    text-align: center;
+    border-top: dashed #E5E5E5 3px;
+    padding: 10px 0 0 0;
+    background-color: #F0F0F0;
+}
+
+
+.article {
+    border-bottom: dashed #E5E5E5 2px;
+} 
+
+.roof {
+    border-top: dashed #E1E1E1 1px; 
+}
+
+.tags ul{
+    margin:1em 0;
+    padding:.5em 10px;
+}
+.tags li{
+    margin:0;
+    padding:0;
+    list-style:none;
+    display:inline;
+}
+
+.tag1{font-size:100%;}
+.tag2{font-size:150%;}
+.tag3{font-size:200%;}
+
+.weight1{font-weight:lighter;}
+.weight2{font-weight:bold;}
+.weight3{font-weight:normal;}
+
+.label a { text-decoration: none;}
+.label a:link {color: #FFF;}
+.label a:visited {color: #FFF;}
+.label a:hover {color: #CCC;}
+
+a.download { 
+    text-decoration: none;
+}
+
+blockquote p {
+    font-size: 14px;
+    color: #999;
+}
+
+.about span{
+    display: none;
+}
+
+.snowfont{
+    position: absolute;
+    z-index:10;
+    position:block;
+}
+
+.personal,
+.excerpt{
+    padding: 20px;
+    margin: 32px auto;
+}
+
+.personal p {
+    color: #111;
+}
+
+#canva {
+    margin-top: 32px;
+}
+
+#canva,
+.personal,
+.excerpt{
+    background-color: #FCFCFC;
+    box-shadow: 0 0 10px #000;
+    border-radius:  10px;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 0 0 10px #000;
+    -webkit-box-shadow: 0 0 10px #000;
+}
+
+

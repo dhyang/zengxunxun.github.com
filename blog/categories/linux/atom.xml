@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Linux | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ssh]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/21/ssh-config/"/>
+    <updated>2013-03-21T10:08:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/21/ssh-config</id>
+    <content type="html"><![CDATA[<h5>basic config</h5>
+
+<p><pre class="prettyprint linenums">
+Host *&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+ForwardX11 yes
+LogLevel=quiet 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Host 15&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;User zengxunxun
+Port 22
+HostName 192.168.1.15
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;</pre></p>
+
+<h5>copy public key</h5>
+
+<p><pre class="prettyprint linenums">
+ssh-copy-id
+</pre></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Iptables]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/21/iptable/"/>
+    <updated>2013-03-21T09:57:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/21/iptable</id>
+    <content type="html"><![CDATA[<h5>iptables basic rules</h5>
+
+<p><pre class="prettyprint linenums">
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [104:10009]
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+</pre></p>
+
+<!-- more -->
+
+
+<h5>iptables save</h5>
+
+<p><pre class="prettyprint linenums">
+echo "&lt;/p&gt;
+
+&lt;h1&gt;!/bin/sh&lt;/h1&gt;
+
+&lt;p&gt;sudo iptables-restore &amplt; /etc/iptables.rules
+exit 0
+" &gt; /etc/network/if-pre-up.d/iptables
+chmod  755 iptables
+</pre></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Openbox Keybind]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/20/openbox/"/>
+    <updated>2013-03-20T09:32:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/20/openbox</id>
+    <content type="html"><![CDATA[<h5>openbox keybind for volume&amp;light control</h5>
+
+<p><pre class="prettyprint linenums">
+&lt;keybind key="XF86AudioRaiseVolume"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;amixer set Master 5%+ unmute&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86AudioLowerVolume"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;amixer set Master 5%- unmute&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86AudioMute"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;amixer set Master toggle&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86MonBrightnessUp"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;xbacklight -inc 10%&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+&lt;keybind key="XF86MonBrightnessDown"&gt;
+  &lt;action name="Execute"&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amplt;command&ampgt;xbacklight -dec 10%&amplt;/command&ampgt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  &lt;/action&gt;
+&lt;/keybind&gt;
+</pre></p>
+]]></content>
+  </entry>
+  
+</feed>

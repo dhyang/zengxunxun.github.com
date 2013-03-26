@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: note | zengxx'notes]]></title>
+  <link href="http://zengxunxun.github.com/blog/categories/note/atom.xml" rel="self"/>
+  <link href="http://zengxunxun.github.com/"/>
+  <updated>2013-03-26T10:01:09+08:00</updated>
+  <id>http://zengxunxun.github.com/</id>
+  <author>
+    <name><![CDATA[zengxunxun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[computer_system]]></title>
+    <link href="http://zengxunxun.github.com/blog/2013/03/24/computer-system/"/>
+    <updated>2013-03-24T18:36:00+08:00</updated>
+    <id>http://zengxunxun.github.com/blog/2013/03/24/computer-system</id>
+    <content type="html"><![CDATA[<ol>
+<li>上下文 位、字符、ASCII标准、文本文件、二进制文件
+在不同的上下中同样的字节序列可能表示一个整数、浮点、字符串、机器指令
+数字的机器表示方法</li>
+<li>编译系统 预处理器-编译器-汇编器-链接器 (Relocatable Object Program)</li>
+<li>优化程序性能、理解链接时错误、避免安全漏洞</li>
+<li>硬件组成：总线、I/O设备、主存、处理器</li>
+<li>开销、机械原理</li>
+<li>存储设备形成的层次结构：寄存器、高速缓存、主存、本地磁盘、远程存储</li>
+<li>操作系统管理硬件：硬件被失控的应用程序滥用、向应用程序提供简单一致的机制来控制复杂而又不同的低级硬件设备</li>
+<li>操作系统对一个正在运行的程序的抽象，上下文：跟踪所需的状态信息，多进程：上下文切换进程交错执行</li>
+<li>线程运行在进程的上下文中，共享代码的全局数据</li>
+<li>虚拟存储器，虚拟地址空间</li>
+<li>全局变量、代码数据区、堆、共享库、栈、内核虚拟存储器</li>
+<li>文件： 文件字节序列</li>
+<li>并行： 并发使一个系统运行更快；并发：同时具有多个活动的系统、线程级并发、指令级并行、单指令、多数据并行</li>
+<li>主内存 大的字节数组(虚拟存储器)</li>
+<li>程序数据、指令和控制信息</li>
+<li>字长</li>
+<li>可移植的掩码 ~0</li>
+<li>逻辑运算，对第一个表达式能确定表达式的结果,那么逻辑运算就不会对第二个参数求值</li>
+<li>stdint.h</li>
+<li>强制类型转换与模计算</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>
